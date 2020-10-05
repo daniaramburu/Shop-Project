@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Tienda de Pastelería</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+    <!-------------------------HEADER PRINCIPAL----------------------->
+
+    <header class="header line" id="header">
+
+
+        <div class="header-marca">
+            <img class="logo-ada" src="img/iso_blanco.svg" />
+            <p class="brand">ADA SHOP</p>
+        </div>
+
+    
+        <div>
+            <button type="button" class="btn-shop line button button-simple-empty">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                Carrito (<span class="cart-qty">0</span> ítems)
+            </button>
+        </div>
+       
+    </header>
+
+    <!------------------------ FIN HEADER PRINCIPAL--------------------->
+
+
+    <!--------------------------- BANNER --------------------------------->
+
+    <section class="banner-principal">
+        <div>
+            <img class="banner-img" src="img/ice_cream_cake_banner.jpg" />
+        </div>
+        <div>
+            <h1 class="banner-title">TIENDA DE PASTELERÍA</h1>
+        </div>
+    </section>
+
+    <!--------------------------- FIN BANNER  ----------------------------->
+
+
+
+
+
+    <!-----------------------------MARKET -------------------------------->
+
+    <main id="shop">
+        <!----------- Filtros--------------- -->
+
+        <section class="filters-container line">
+            <aside>
+
+                <!--Header Filtros-->
+                <div class="filters-heading-container line">
+
+                    <div class="filters-title">
+                        <h2>FILTROS</h2>
+                    </div>
+
+                    <div class="filters-clear-btn-container">
+                        <button type="button" class="clear-btn line">
+                            <i class="fas fa-trash-alt"></i>
+                            <h3 class="clear-title">Limpiar</h3>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- fin Header Filtro -->
+
+
+
+                <!-- Filtro Busqueda -->
+                <div class="filters-search-container">
+
+                    <div>
+                        <h3>BUSQUEDA</h3>
+                    </div>
+
+                    <div class="input-search-container line">
+                        <input type="text" id="input-search" placeholder="¿Qué estás buscando?">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                </div>
+                <!-- Fin Filtro Busqueda -->
+
+
+
+                <!-- Inicio Filtro Categoría -->
+                <div class="main-category-container">
+
+                    <div>
+                        <h3>CATEGORIA</h3>
+                    </div>
+
+                    <div class="checkboxes-container">
+
+                        <label for="category" class="input-checkboxes-container">
+
+                            <label class="input-category line">
+                                <input type="checkbox" class=" filter filter-category" name="category" value="sinazucar">
+                                </input>
+                                <h4>TORTAS SIN AZUCAR</h4>
+                            </label>
+
+                            <label class="input-category line">
+                                <input type="checkbox" class="filter filter-category" name="category" value="sintacc">
+                                </input>
+                                <h4>TORTAS SIN TACC</h4>
+                            </label>
+
+                            <label class="input-category line">
+                                <input type="checkbox" class="filter filter-category" name="category" value="budines">
+                                </input>
+                                <h4>BUDINES</h4>
+                            </label>
+
+                            <label class="input-category line">
+                                <input type="checkbox" class="filter filter-category" name="category" value="cookies">
+                                </input>
+                                <h4>COOKIES</h4>
+                            </label>
+
+                            <label class="input-category line">
+                                <input type="checkbox" class="filter filter-category" name="category" value="postres">
+                                </input>
+                                <h4>POSTRES</h4>
+                            </label>
+
+                        </label>
+                    </div>
+                </div>
+                <!-- Fin Filtro Categoria -->
+
+
+
+                <!-- Inicio Filtro Estrellas -->
+
+                <div class="stars-container">
+
+                    <div>
+                        <h3>PUNTAJE</h3>
+                    </div>
+
+                    <div class="filters-stars">
+
+                        <label class="star-input line">
+                            <input type="checkbox" name="stars" class="filter filter-review" value="5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <h4>(5)</h4>
+                            </input>
+                        </label>
+
+                        <label class="star-input line">
+                            <input type="checkbox" name="stars" class="filter filter-review" value="4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <h4>(4)</h4>
+                            </input>
+                        </label>
+
+                        <label class="star-input line">
+                            <input type="checkbox" name="stars" class="filter filter-review" value="3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <h4>(3)</h4>
+                            </input>
+                        </label>
+
+                        <label class="star-input line">
+                            <input type="checkbox" name="stars" class="filter filter-review" value="2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <h4>(2)</h4>
+                            </input>
+                        </label>
+
+                        <label class="star-input line">
+                            <input type="checkbox" name="stars" class="filter filter-review" value="1">
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <h4>(1)</h>
+                            </input>
+                        </label>
+
+                    </div>
+                    <!-- Fin Filtro Estrellas -->
+                </div>
+            </aside>
+
+
+            <!--------------------Fin Filtros ------------------------>
+
+
+
+            <!--------------------- Productos ---------------------------->
+
+            <section class="products-container">
+
+                <!--  Inicia header de productos  -->
+                <header class="products-header line">
+                    <div>
+                        <p id="products-qty">Mostrando 12 producto(s) de 12</p>
+                    </div>
+                    <div class="view-buttons-container line ">
+                        <div>
+                            <p>Ver como</p>
+                        </div>
+                        <div id="view-button-grid">
+                            <button type="button">
+                                <i class="fas fa-th"></i>
+                            </button>
+                        </div>
+                        <div id="view-button-list">
+                            <button type="button">
+                                <i class="fas fa-list" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!----  fin header de productos  ---->
+
+                <!---- Inicia listado Productos ----->
+
+                <div class="products-list grid">
+
+                    <!--Cheesecake frutos rojos-->
+
+                    <article class="product in-stack" data-id="0" data-name="torta Cheescake Frutos Rojos" data-category="tortas"
+                        data-price="1000" data-image="img/cheesecake.jpg" data-review="3">
+
+                        <div class="product-img-container line">
+                            <img src="img/cheesecake.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Cheescake Frutos Rojos</h2>
+                            <p class="product-price">$ 1000</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                 id= "0">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden"> 
+                            <p>Clásico cheesecake hecho con base de galletitas sin azucar caseras y cobertura de frutos rojos al natural.</p>
+                            </div>
+                    </article>
+
+                    <!--Cheesecake maracuya-->
+
+                    <article class="product in-stack" data-id="1" data-name="cheesecake maracuya" data-category="tortas"
+                        data-price="1000" data-image="img/cheesecakemara.jpg" data-review="5">
+                        <div class="product-img-container line">
+                            <img src="img/cheesecakemara.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Cheescake Maracuyá</h2>
+                            <p class="product-price">$ 1000</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid  btn-add-car"
+                                id= "1">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Clásico cheesecake con base de galletitas caseras sin azúcar y cobertura de salsa de maracuyá natural.</p>
+                            </div>
+                    </article>
+
+                    <!--Cookies-->
+
+                    <article class="product in-stack" data-id="2" data-name="Cookies" data-category="cookies"
+                        data-price="500" data-image="img/cookies.jpg" data-review="2">
+                        <div class="product-img-container line">
+                            <img src="img/cookies.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Cookies Avena</h2>
+                            <p class="product-price">$ 500</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "2">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                           <p> Cookies de avena con chips de chocolate amargo al %85 </p>
+                        </div>
+                    </article>
+
+                    <!--Budín manzana-->
+
+                    <article class="product in-stack" data-id="3" data-name="Headphones Sony" data-category="accesorios"
+                        data-price="500" data-image="images/sony.png" data-review="3">
+                        <div class="product-img-container line">
+                            <img src="img/budinzana.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Carrot Cake</h2>
+                            <p class="product-price">$ 600</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "3">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Budín de zanahoria cómo ingrediente principal, naranja y frutos secos(edulzado con stevia granulada)</p>
+                            </div>
+                    </article>
+
+                    <!--Tarteleta de pastelera-->
+                    <article class="product in-stack" data-id="4" data-name="Nintendo Switch" data-category="consolas"
+                        data-price="46999" data-image="images/switch.jpg" data-review="5">
+                        <div class="product-img-container line">
+                            <img src="img/postre.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Tarteleta de pastelera y frutillas</h2>
+                            <p class="product-price">$ 400</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid button-add-to-cart"
+                                id= "4">
+                                    Comprar
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Masa samblee, crema pastelera y frutillas al natural (endulzadas con stevia granulada)</p>
+                            </div>
+                    </article>
+
+                    <!--Scones-->
+
+                    <article class="product in-stack" data-id="5" data-name="Notebook Asus" data-category="notebooks"
+                        data-price="32999" data-image="images/asus.png" data-review="1">
+                        <div class="product-img-container line">
+                            <img src="img/scones.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Scones de frutos rojos</h2>
+                            <p class="product-price">$ 600</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "5">
+                                    Comprar
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Scones con frutos rojos.</p>
+                            </div>
+                    </article>
+
+                    <!--Lemon Pie-->
+
+                    <article class="product in-stack" data-id="6" data-name="Notebook MSI" data-category="notebooks"
+                        data-price="37999" data-image="images/msi.png" data-review="3">
+                        <div class="product-img-container line">
+                            <img src="img/lemon.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Lemon Pie</h2>
+                            <p class="product-price">$ 1500</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "6">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Clásico Lemon Pie, hecho con base de galletitas de harina de almendras.</p>
+                            </div>
+                    </article>
+
+                    <!--Tarteleta de ricota y frutos rojos-->
+
+                    <article class="product in-stack" data-id="7" data-name="Headphones Philips"
+                        data-category="accesorios" data-price="11999" data-image="images/headphones.png"
+                        data-review="2">
+                        <div class="product-img-container line">
+                            <img src="img/postre1.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Tarteleta de ricota y frutos rojos</h2>
+                            <p class="product-price">$ 500</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "7">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description is-hidden">
+                            <p></p>
+                            </div>
+                    </article>
+
+                    <!--Brownie-->
+
+                    <article class="product in-stack" data-id="8" data-name="budin de manzana" data-category="budines"
+                        data-price="800" data-image="images/macbook.png" data-review="4">
+                        <div class="product-img-container line">
+                            <img src="img/brownie.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Brownie</h2>
+                            <p class="product-price">$ 800</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "8">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Capas de brownie crema de dulce de leche, arandanos y frutillas</p>
+                            </div>
+                    </article>
+
+                    <!--Torta de ricotta-->
+
+                    <article class="product in-stack" data-id="9" data-name="iPhone" data-category="celulares"
+                        data-price="79999" data-image="images/iphone.jpeg" data-review="3">
+                        <div class="product-img-container line">
+                            <img src="img/ricotta.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Torta Ricotta</h2>
+                            <p class="product-price">$ 1500</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "9">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Base de galletitas de harina de almendras, 500g de ricotta, con coco rallado arriba.</p>
+                            </div>
+                    </article>
+
+                    <!-- Budin Marmolado -->
+
+                    <article class="product in-stack" data-id="10" data-name="Xbox One" data-category="budin"
+                        data-price="600" data-image="images/xbox.jpg" data-review="4">
+                        <div class="product-img-container line">
+                            <img src="img/budinmarmolado.jpg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Budin Marmolado</h2>
+                            <p class="product-price">$ 600</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="far fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "10">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Budín de vainilla y chocolate amargo</p>
+                            </div>
+                    </article>
+
+                    <!--Mini chocotorta-->
+
+                    <article class="product in-stack" data-id="11" data-name="mini chocotorta" data-category="postres"
+                        data-price="4999" data-image="img/chocotorta.jpeg" data-review="5">
+                        <div class="product-img-container line">
+                            <img src="img/chocotorta.jpeg" alt="" class="product-img" />
+                        </div>
+
+                        <div class="product-content in-stack">
+                            <h2 class="product-name">Mini Chocotortas</h2>
+                            <p class="product-price">$ 600</p>
+                            <div class="review filters-review">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <button type="button" class="button button-simple-solid btn-add-car"
+                                id= "11">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-description hidden">
+                            <p>Mini chocotortas</p>
+                            </div>
+                    </article>
+                    <!--  fin listado Productos  -->
+            </section>
+
+    </main>
+
+    <!--------------------------------  FIN CATALOGO------------------------------------------- -->
+
+
+
+    <!---------------- FOOTER  -------------------->
+
+    <footer class="footer-main line">
+
+        <div class="logo-container line">
+            <img src="img/iso_blanco.svg" class="logo-ada" />
+            <p class="brand">ADA SHOP -💚 Gracias por visitarnos 💚</p>
+        </div>
+
+    </footer>
+
+    <!----------------FIN FOOTER----------------->
+
+</body>
+
+</html>
