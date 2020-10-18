@@ -1,10 +1,10 @@
 /*FUNCIONES GENERALES*/
-const ocultar = (element) => {
+const hide = (product) => {
   return product.classList.add("hidden");
 };
 
-const mostrar = (element) => {
-  return element.classList.remove("hidden");
+const show = (product) => {
+  return product.classList.remove("hidden");
 };
 
 /*GRID- LIST*/
@@ -57,6 +57,16 @@ const mostrar = (element) => {
 /*/*NO ANDAN DESCRIPCIONES SFSSGSSS */
 
 ////////////////////* filtros */////////////////////
+/*EJECUCION FILTROS/BOTON LIMPIAR*/
+/*
+Seleccionar elementos y guardarnos en const (OK)
+recorrer todos los filters 
+evocar f(x) si hay algun filtro onclick.
+filtrar productos en consecuencia (a traves de c/ f(x))
+dar resultado 
+
+onclick clear-btn = limpiar todos los filtros (OK)(PONELE)
+*/
 
 /*selecciono*/
 const inputSearch = document.querySelector("#input-search"); /*CAJA BUSQUEDA*/
@@ -73,7 +83,7 @@ const checkboxesFilter = document.querySelectorAll(
   ".filter"
 ); /*LISTA DE CHECKBOXES*/
 const clearAllFiltersBtn = document.querySelector(".clear-btn"); /*BOTON*/
-const checkboxes = document.querySelectorAll(
+const allCheckboxes = document.querySelectorAll(
   "input[type='checkbox']"
 ); /*CHECKBOX EN GRAL*/
 
@@ -85,65 +95,120 @@ console.log(checkboxesFilter);
 console.log(clearAllFiltersBtn);
 /*ok*/
 
-/*EJECUCION FILTROS/BOTON LIMPIAR*/
-/*
-Seleccionar elementos y guardarnos en const (OK)
-recorrer todos los filters 
-evocar f(x) si hay algun filtro onclick.
-filtrar productos en consecuencia (a traves de c/ f(x))
-dar resultado 
-
-onclick clear-btn = limpiar todos los filtros (OK)(PONELE)
-*/
 
 // for (let product of products){
 //   console.log(product.dataset)
 // }
 
-inputSearch.oninput = () => {
-  for (let product of products) {
-    if (product.dataset.name.includes(inputSearch.value.toLowerCase())) {
-      product.classList.remove("hidden");
-    } else {
-      product.classList.add("hidden");
+
+//PRIMEROS INTENTOS DE F(X)
+
+/*busqueda por input*/
+// inputSearch.oninput = () => {
+//   for (let product of products) {
+//     if (product.dataset.name.includes(inputSearch.value.toLowerCase())) {
+//       product.classList.remove("hidden");
+//     } else {
+//       product.classList.add("hidden");
+//     }
+//   }
+// };
+
+// /*busqueda por categoria*/
+// for (let checkboxCategory of categoryFilter) {
+//   checkboxCategory.oninput = () => {
+//     // console.log(checkboxCategory.dataset.category)
+//     for (let product of products) {
+//       product.classList.add("hidden");
+//       for (let checkboxCategory2 of categoryFilter) {
+//         if (checkboxCategory2.checked) {
+//           if (checkboxCategory2.dataset.category === product.dataset.category) {
+//             product.classList.remove("hidden");
+//           }
+//         }
+//       }
+//     }
+//   };
+// }
+// /*busqueda por estrella*/
+
+// for (let estrella of starsFilter) {
+//   estrella.oninput = () => {
+//     // console.log(estrella.value)
+//     // if (estrella.checked) {
+//     for (let product of products) {
+//       product.classList.add("hidden");
+//       for (let estrella2 of starsFilter) {
+//         if (estrella2.checked) {
+//           if (estrella2.value === product.dataset.stars) {
+//             product.classList.remove("hidden");
+//           }
+//         }
+//       }
+//     }
+//   };
+// }
+
+
+
+/* f(x) Que pase todo junto:*/
+//f(x) filtersMatch con parametro de cada tarjeta revisa si hay evento y retorna t/f
+
+const checkboxCategoryChecked = () => {
+  for (categoryCheckbox of categoryFilter) {
+    if (categoryCheckbox.checked) {
+      return true;
     }
   }
+  return false
+  
 };
 
-/*busqueda por categoria*/
-for (let checkboxCategory of categoryFilter) {
-  checkboxCategory.oninput = () => {
-    // console.log(checkboxCategory.dataset.category)
-    for (let product of products) {
-      product.classList.add("hidden");
-      for (let checkboxCategory2 of categoryFilter) {
-        if (checkboxCategory2.checked) {
-          if (checkboxCategory.dataset.category === product.dataset.category) {
-            product.classList.remove("hidden");
-          }
-        }
-      }
-    }
-  };
-}
-/*busqueda por estrella*/
-
-for (let estrella of starsFilter) {
-  estrella.oninput = () => {
-    // console.log(estrella.value)
-    // if (estrella.checked) {
-    for (let product of products) {
-      product.classList.add("hidden");
-      for (let estrella2 of starsFilter) {
-        if (estrella2.checked) {
-          if (estrella2.value === product.dataset.stars) {
-            product.classList.remove("hidden");
-          }
-        }
-      }
+const checkboxStarsChecked = () => {
+  for (starsCheckbox of starsFilter) {
+    if (starsCheckbox.checked){
+      return true
     }
   }
+  return false
 };
+
+const somethingInInput = () => {
+  if (inputSearch.value) {
+  return true
+  }
+  return false
+};
+
+
+
+// const runFilters = () => {
+//   for (product of products) {
+//     if (filtersMatch(product)) {
+//       hide(product);
+//     } else {
+//       show(product);
+//     }
+//   }
+// };
+
+// /* ver si hay evento */
+
+// inputSearch.oninput = () => {
+//   runFilters();
+// };
+
+// for (let checkboxCategory of categoryFilter) {
+//   checkboxCategory.oninput = () => {
+//     runFilters();
+//   };
+// }
+
+// for (let estrella of starsFilter) {
+//   estrella.oninput = () => {
+//     runFilters();
+//   };
+// }
 
 // const filtrarElementos = () => {
 //   for (let product of products) {
@@ -155,7 +220,9 @@ for (let estrella of starsFilter) {
 //   }
 // };
 
-// BUSCAR POR NOMBRE //
+
+
+// BUSCAR POR NOMBRE pensadondolo mejor //
 
 // const somethingInInput = () => {
 //   if (inputSearch.value) {
@@ -205,7 +272,7 @@ for (let estrella of starsFilter) {
 //   for (let producto of products) {
 //     producto.classList.remove("hidden");
 //   }
-//   for (let checkbox of checkboxes) {
+//   for (let checkbox of allCheckboxes) {
 //     checkbox.checked = false;
 //   }
 // };
