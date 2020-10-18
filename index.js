@@ -96,50 +96,64 @@ dar resultado
 onclick clear-btn = limpiar todos los filtros (OK)(PONELE)
 */
 
-const filtrarElementos = () => {
+// for (let product of products){
+//   console.log(product.dataset)
+// }
+
+inputSearch.oninput = () => {
   for (let product of products) {
-    if (pasaFiltros(element)) {
-      mostrar(element);
+    if (product.dataset.name.includes(inputSearch.value.toLowerCase())) {
+      product.classList.remove("hidden");
     } else {
-      ocultar(element);
+      product.classList.add("hidden");
     }
   }
 };
 
-/*busqueda por estrella*/
-for (let estrella of starsFilter) {
-    estrella.onclick = () => {
-      //console.log(estrella)
-        for (product of products) {
-            if (starsFilter.checked) {
-                if (estrella.dataset.stars === product.dataset.stars) {
-                    card.classList.remove('hidden');
-                }
-                else {
-                    card.classList.add('hidden');
-                }
-            }
-            else {
-                 card.classList.remove('hidden');
-            }
-        }
-            
-    };
-  }
 /*busqueda por categoria*/
-
 for (let checkboxCategory of categoryFilter) {
-  checkboxCategory.onclick = () => {
-    // if (category.checked) {
-    for (product of products) {
-      if (category.dataset.category === card.dataset.category) {
-        product.classList.remove("hidden");
-      } else {
-        product.classList.add("hidden");
+  checkboxCategory.oninput = () => {
+    // console.log(checkboxCategory.dataset.category)
+    for (let product of products) {
+      product.classList.add("hidden");
+      for (let checkboxCategory2 of categoryFilter) {
+        if (checkboxCategory2.checked) {
+          if (checkboxCategory.dataset.category === product.dataset.category) {
+            product.classList.remove("hidden");
+          }
+        }
       }
     }
   };
 }
+/*busqueda por estrella*/
+
+for (let estrella of starsFilter) {
+  estrella.oninput = () => {
+    // console.log(estrella.value)
+    // if (estrella.checked) {
+    for (let product of products) {
+      product.classList.add("hidden");
+      for (let estrella2 of starsFilter) {
+        if (estrella2.checked) {
+          if (estrella2.value === product.dataset.stars) {
+            product.classList.remove("hidden");
+          }
+        }
+      }
+    }
+  }
+};
+
+// const filtrarElementos = () => {
+//   for (let product of products) {
+//     if (pasaFiltros(element)) {
+//       mostrar(element);
+//     } else {
+//       ocultar(element);
+//     }
+//   }
+// };
 
 // BUSCAR POR NOMBRE //
 
@@ -186,7 +200,7 @@ for (let checkboxCategory of categoryFilter) {
 // }
 
 // //------------Limpiar Busqueda--------------//
-// clearAllFiltersBtn.onclick = () => {
+// clearAllFiltersBtn.on click = () => {
 //   inputSearch.value = "";
 //   for (let producto of products) {
 //     producto.classList.remove("hidden");
