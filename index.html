@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel='stylesheet' href='style.css'>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
@@ -110,31 +109,31 @@
                         <label for="category" class="input-checkboxes-container">
 
                             <label class="input-category line">
-                                <input type="checkbox" class=" filter filter-category" name="category" value="sinazucar">
+                                <input type="checkbox" class=" filter filter-category" name="category" data-category="sinazucar">
                                 </input>
                                 <h4>TORTAS SIN AZUCAR</h4>
                             </label>
 
                             <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" value="sintacc">
+                                <input type="checkbox" class="filter filter-category" name="category" data-category="sintacc">
                                 </input>
                                 <h4>TORTAS SIN TACC</h4>
                             </label>
 
                             <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" value="budines">
+                                <input type="checkbox" class="filter filter-category" name="category" data-category="budines">
                                 </input>
                                 <h4>BUDINES</h4>
                             </label>
 
                             <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" value="cookies">
+                                <input type="checkbox" class="filter filter-category" name="category" data-category="cookies">
                                 </input>
                                 <h4>COOKIES</h4>
                             </label>
 
                             <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" value="postres">
+                                <input type="checkbox" class="filter filter-category" name="category" data-category="postres">
                                 </input>
                                 <h4>POSTRES</h4>
                             </label>
@@ -234,12 +233,12 @@
                         <div>
                             <p>Ver como</p>
                         </div>
-                        <div id="view-button-grid">
+                        <div id="grid-btn">
                             <button type="button">
                                 <i class="fas fa-th"></i>
                             </button>
                         </div>
-                        <div id="view-button-list">
+                        <div id="list-btn">
                             <button type="button">
                                 <i class="fas fa-list" aria-hidden="true"></i>
                             </button>
@@ -255,8 +254,8 @@
 
                     <!--Cheesecake frutos rojos-->
 
-                    <article class="product in-stack" data-id="0" data-name="torta Cheescake Frutos Rojos" data-category="tortas"
-                        data-price="1000" data-image="img/cheesecake.jpg" data-review="3">
+                    <article class="product in-stack" data-id="0" data-name="cheescake Frutos Rojos" data-category="tortas"
+                        data-price="1000" data-image="img/cheesecake.jpg" data-stars="3">
 
                         <div class="product-img-container line">
                             <img src="img/cheesecake.jpg" alt="" class="product-img" />
@@ -280,14 +279,14 @@
                             </div>
                         </div>
                         <div class="product-description hidden"> 
-                            <p>Clásico cheesecake hecho con base de galletitas sin azucar caseras y cobertura de frutos rojos al natural.</p>
+                            Clásico cheesecake hecho con base de galletitas sin azucar caseras y cobertura de frutos rojos al natural.
                             </div>
                     </article>
 
                     <!--Cheesecake maracuya-->
 
                     <article class="product in-stack" data-id="1" data-name="cheesecake maracuya" data-category="tortas"
-                        data-price="1000" data-image="img/cheesecakemara.jpg" data-review="5">
+                        data-price="1000" data-image="img/cheesecakemara.jpg" data-stars="5">
                         <div class="product-img-container line">
                             <img src="img/cheesecakemara.jpg" alt="" class="product-img" />
                         </div>
@@ -317,8 +316,8 @@
 
                     <!--Cookies-->
 
-                    <article class="product in-stack" data-id="2" data-name="Cookies" data-category="cookies"
-                        data-price="500" data-image="img/cookies.jpg" data-review="2">
+                    <article class="product in-stack" data-id="2" data-name="cookies" data-category="cookies"
+                        data-price="500" data-image="img/cookies.jpg" data-stars="2">
                         <div class="product-img-container line">
                             <img src="img/cookies.jpg" alt="" class="product-img" />
                         </div>
@@ -348,8 +347,8 @@
 
                     <!--Budín manzana-->
 
-                    <article class="product in-stack" data-id="3" data-name="Headphones Sony" data-category="accesorios"
-                        data-price="500" data-image="images/sony.png" data-review="3">
+                    <article class="product in-stack" data-id="3" data-name="carrot cake" data-category="budines"
+                        data-price="600" data-image="img/budinmanzana" data-stars="3">
                         <div class="product-img-container line">
                             <img src="img/budinzana.jpg" alt="" class="product-img" />
                         </div>
@@ -378,8 +377,8 @@
                     </article>
 
                     <!--Tarteleta de pastelera-->
-                    <article class="product in-stack" data-id="4" data-name="Nintendo Switch" data-category="consolas"
-                        data-price="46999" data-image="images/switch.jpg" data-review="5">
+                    <article class="product in-stack" data-id="4" data-name="tarteleta pastelera" data-category="postres"
+                        data-price="400" data-image="images/switch.jpg" data-stars="5">
                         <div class="product-img-container line">
                             <img src="img/postre.jpg" alt="" class="product-img" />
                         </div>
@@ -410,8 +409,8 @@
 
                     <!--Scones-->
 
-                    <article class="product in-stack" data-id="5" data-name="Notebook Asus" data-category="notebooks"
-                        data-price="32999" data-image="images/asus.png" data-review="1">
+                    <article class="product in-stack" data-id="5" data-name="scones" data-category="budines"
+                        data-price="600" data-image="img/scones.jpg" data-stars="1">
                         <div class="product-img-container line">
                             <img src="img/scones.jpg" alt="" class="product-img" />
                         </div>
@@ -442,8 +441,8 @@
 
                     <!--Lemon Pie-->
 
-                    <article class="product in-stack" data-id="6" data-name="Notebook MSI" data-category="notebooks"
-                        data-price="37999" data-image="images/msi.png" data-review="3">
+                    <article class="product in-stack" data-id="6" data-name="lemon pie" data-category="sintacc"
+                        data-price="1500" data-image="images/msi.png" data-stars="3">
                         <div class="product-img-container line">
                             <img src="img/lemon.jpg" alt="" class="product-img" />
                         </div>
@@ -473,9 +472,9 @@
 
                     <!--Tarteleta de ricota y frutos rojos-->
 
-                    <article class="product in-stack" data-id="7" data-name="Headphones Philips"
-                        data-category="accesorios" data-price="11999" data-image="images/headphones.png"
-                        data-review="2">
+                    <article class="product in-stack" data-id="7" data-name="tarteleta ricota"
+                        data-category="postres" data-price="500" data-image="img/postre1.jpeg"
+                        data-stars="2">
                         <div class="product-img-container line">
                             <img src="img/postre1.jpg" alt="" class="product-img" />
                         </div>
@@ -498,15 +497,15 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="product-description is-hidden">
-                            <p></p>
+                        <div class="product-description hidden">
+                            <p>Tarteleta de ricota con salsa de frutos rojos sin azúcar</p>
                             </div>
                     </article>
 
                     <!--Brownie-->
 
-                    <article class="product in-stack" data-id="8" data-name="budin de manzana" data-category="budines"
-                        data-price="800" data-image="images/macbook.png" data-review="4">
+                    <article class="product in-stack" data-id="8" data-name="brownie" data-category="sinazucar"
+                        data-price="800" data-image="images/macbook.png" data-stars="4">
                         <div class="product-img-container line">
                             <img src="img/brownie.jpg" alt="" class="product-img" />
                         </div>
@@ -530,14 +529,14 @@
                             </div>
                         </div>
                         <div class="product-description hidden">
-                            <p>Capas de brownie crema de dulce de leche, arandanos y frutillas</p>
+                            <p>Capas de brownie amargo, dulce de leche sin azucar, arandanos y frutillas</p>
                             </div>
                     </article>
 
                     <!--Torta de ricotta-->
 
-                    <article class="product in-stack" data-id="9" data-name="iPhone" data-category="celulares"
-                        data-price="79999" data-image="images/iphone.jpeg" data-review="3">
+                    <article class="product in-stack" data-id="9" data-name="torta de ricotta" data-category="tortas"
+                        data-price="1500" data-image="img/ricota.jpg" data-stars="3">
                         <div class="product-img-container line">
                             <img src="img/ricotta.jpg" alt="" class="product-img" />
                         </div>
@@ -567,8 +566,8 @@
 
                     <!-- Budin Marmolado -->
 
-                    <article class="product in-stack" data-id="10" data-name="Xbox One" data-category="budin"
-                        data-price="600" data-image="images/xbox.jpg" data-review="4">
+                    <article class="product in-stack" data-id="10" data-name="budin marmolado" data-category="budines"
+                        data-price="600" data-image="images/xbox.jpg" data-stars="4">
                         <div class="product-img-container line">
                             <img src="img/budinmarmolado.jpg" alt="" class="product-img" />
                         </div>
@@ -599,7 +598,7 @@
                     <!--Mini chocotorta-->
 
                     <article class="product in-stack" data-id="11" data-name="mini chocotorta" data-category="postres"
-                        data-price="4999" data-image="img/chocotorta.jpeg" data-review="5">
+                        data-price="4999" data-image="img/chocotorta.jpeg" data-stars="5">
                         <div class="product-img-container line">
                             <img src="img/chocotorta.jpeg" alt="" class="product-img" />
                         </div>
@@ -642,12 +641,50 @@
         <div class="logo-container line">
             <img src="img/iso_blanco.svg" class="logo-ada" />
             <p class="brand">ADA SHOP -💚 Gracias por visitarnos 💚</p>
-        </div>
-
-    </footer>
-
+    
     <!----------------FIN FOOTER----------------->
 
+     <!--  INICIO CARRITO -->
+     <!-- <div class="header-menu-add-to-card  menu-add-to-card-hidde is-hidden ">
+        <div class="cart-container in-stack">
+            <div class="cart-title-container line">
+                <h2>CARRITO</h2>
+                <button type="button" class="btn-close">
+                    <i class="far fa-window-close"></i>
+                </button>
+            </div>
+            <div class= "cart-full"> 
+                <div class="line">
+                <p><span class="cart-qty">0</span> producto(s) agregado(s)</p>
+            </div>
+            <div class="cart-products-added">
+
+            </div>
+            <div class="subtotal-container Line">
+                <p> Subtotal $ <span class="cart-subtotal-value">0</span></p>
+            </div>
+            <div class=" add-to-card-buttons in-stack">
+                <button type="button" class="btn-buy  ine button
+                button-simple-solid-reverse">
+                    COMPRAR
+                </button>
+                
+                <button type="button" class="btn-empty-cart line button
+                button-simple-empty ">
+                    VACIAR
+                </button>   
+            </div>     
+        </div>
+       
+            <div class="cart-empty hidden">
+                <p class="cart-empty-msg ">No tienes productos en el carrito, ¡Agrega algunos! </p>
+            </div>      
+        </div>
+    </div> -->
+     <!--  FIN CARRITO -->
+
+
+     <script src="index.js"></script>
 </body>
 
 </html>

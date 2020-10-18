@@ -1,0 +1,111 @@
+
+<!-- 
+ <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´  INICIO CONFIRMACION DE COMPRA★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+ <div class="menu-checkout checkout-is-hidden">
+     <div class="in-line">
+
+         <form class="checkout-info">
+             <h2 class="checkout-title">Checkout</h2>
+             <div class="checkout-personal-info">
+
+                 <h3 class="info-title">Datos Personales</h3>
+
+                 <div class="checkout-personal-info-inputs ">
+                     <label>
+                         Nombre y apellido *
+                         <input type="text" placeholder="Nombre Apellido" name="Nombre y Apellido" required />
+                     </label>
+                     <label>
+                         Email *
+                         <input type="email" placeholder="ejemplo@ejemplo.com" required />
+                     </label>
+                 </div>
+
+             </div>
+
+             <!-- *** [ Comiezo Opciones de Pago ] *** -->
+             <div class="checkout-payment in-stack">
+                 <h3 class="info-title">Opciones de pago</h3>
+                 <div class="checkout-section-container in-stack">
+
+                     <label>
+                         <input type="radio" name="payment" value="cash-debit" checked />Efectivo / Débito
+                     </label>
+                     <label>
+                         <input type="radio" name="payment" value="credit" />Tarjeta
+                         de crédito
+                     </label>
+                     <label>
+                         <input type="checkbox" name="delivery" /> Necesito envío
+                     </label>
+                     <label>
+                         <input type="checkbox" name="discount" /> Tengo tarjeta de
+                         descuento
+                     </label>
+
+                 </div>
+             </div>
+         </form>
+         <!-- *** [ Fin Opciones de Pago ] *** -->
+
+         <!-- *** [ Comienzo Subtotales ] *** -->
+         <section class="cart-totals">
+             <h3 class="info-title">Resumen</h3>
+             <div>
+                 <p class="cart-tax">
+                     Recargo $<span class="cart-tax-value is-hidden">0</span>
+                 </p>
+                 <p class="cart-discount">
+                     Descuento 10% $<span class="cart-discount-value is-hidden"></span>
+                 </p>
+                 <p class="cart-delivery">
+                     Envío $<span class="cart-delivery-value is-hidden">50</span>
+                 </p>
+
+                 <p class="cart-subtotal">
+                     Subtotal $ <span class="cart-subtotal-value">0</span>
+                 </p>
+                 <p class="cart-total">
+                     Total: $ <span class="cart-total-value">0</span>
+                 </p>
+             </div>
+         </section>
+     </div>
+     <!-- *** [ Fin Subtotales ] *** -->
+
+     <footer class="footer-checkout in-line">
+         <button type="button" class="btn-cancel-buy button button-simple-solid">
+             Seguir comprando
+         </button>
+         <button type="button" class="btn-finish-buy button button-simple-solid-reverse">
+             Finalizar
+         </button>
+     </footer>
+
+ </div>
+
+ <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´  FIN CONFIRMACION DE COMPRA ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+
+ <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´  INICIO VACIAR CARRITO ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+ <div class="is-hidden">
+     <div class="modal modal-empty-cart">
+
+         <p class="modal-message" id="empty-cart-description">
+             ¿No querés llevar nada de la tienda?
+         </p>
+         <footer class="modal-actions">
+             <button type="button" class="button button-simple cancel-empty-cart-btn">
+                 Cancelar
+             </button>
+             <button type="button" class="button button-simple confirm-cart-empty-btn">
+                 Vaciar
+             </button>
+         </footer>
+     </div>
+
+     <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´  fin VACIAR CARRITO ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+     <script src="index.js"></script> 
+
+</body>
+</html>
+ 
