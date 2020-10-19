@@ -4,9 +4,9 @@
 
 /*GRALES*/
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 * {
   margin: 0;
   padding: 0;
@@ -82,11 +82,18 @@ p {
   justify-content: center;
   align-items: center;
 }
-.in-stack {
+.column {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items:center;
 }
 
 /*****Botones******/
@@ -320,6 +327,7 @@ button {
   border-radius: 5px;
   overflow: hidden;
   transition: box-shadow 0.5s;
+  text-align: center;
 }
 .product-img-container {
   height: 250px;
@@ -327,7 +335,7 @@ button {
 }
 .product-img {
   height: 100%;
-  width: 80%;
+  width: auto;
   transition: 0.2s;
   opacity: 1;
 }
@@ -349,7 +357,16 @@ button {
   margin: 20px;
   border: 0;
 }
-
+.line-prod {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+.line-prod .product-img-container {
+	min-width: 250px;
+}
 /********************
 *****FIN PRODUCTOS***
 **********************/

@@ -1,3 +1,6 @@
+
+/*-------SELECTORES----*/
+
 /*GRID- LIST */
 
 const gridButton = document.querySelector('#grid-btn')
@@ -6,10 +9,10 @@ const productsList = document.querySelector('.products-list');
 const productsDescriptions = document.querySelectorAll('.product-description');//todas las descripciones de los productos
 
 /*pruebo si selecciona*/
-console.log(gridButton)
-console.log(listButton)
-console.log(productsList)
-console.log(productsDescriptions)
+// console.log(gridButton)
+// console.log(listButton)
+// console.log(productsList)
+// console.log(productsDescriptions)
 /*ok*/
 
 /*FILTROS*/
@@ -31,58 +34,60 @@ const allCheckboxes = document.querySelectorAll(
   "input[type='checkbox']"
 ); /*CHECKBOX EN GRAL*/
 
-console.log(inputSearch);
-console.log(products);
-console.log(starsFilters);
-console.log(categoryFilters);
-console.log(checkboxesFilter);
-console.log(clearAllFiltersBtn);
-/*ok*/
+// console.log(inputSearch);
+// console.log(products);
+// console.log(starsFilters);
+// console.log(categoryFilters);
+// console.log(checkboxesFilter);
+// console.log(clearAllFiltersBtn);
+// /*ok*/
 
-/*cambiar numero*/
-const quantityOfProducts = document.querySelector("#products-quantity")
-console.log(quantityOfProducts)
+// /*cambiar numero*/
+// const quantityOfProducts = document.querySelector("#products-quantity")
+// console.log(quantityOfProducts)
 
-/*FUNCIONES*/ 
+/*---------------F(X) GRILLA/LISTA---------------------*/ 
 
 /* f(x) para mostrar en grid: **/
-  showGrid = () =>{
-    productsList.classList.remove("in-stack")
+  grid = () =>{
+    productsList.classList.remove("column")
     productsList.classList.add("grid")
 
-    for(let product of productsList){
-      product.classList.remove("line")
+    for(let prod of products){
+      prod.classList.remove("line-prod")
     }
 
-    for(let desc of productsDescriptions){
-      hide(desc);
+    for (let description of productsDescriptions){
+      hide(description)
     }
   }
 
-showList = () =>{
+/* f(x) para mostrar en lista: **/
+list = () =>{
    productsList.classList.remove("grid")
-    productsList.classList.add("in-stack")
+    productsList.classList.add("column")
 
-    for(let product of productsList){
-      product.classList.add("line");
+    for(let prod of products){
+      prod.classList.add("line-prod");
     }
-    for(let desc of productsDescriptions){
-      show(desc);
+
+    for(let description of productsDescriptions){
+      show(description)
     }
   }
+/* eventos on click para grilla/lista*/
 
   gridButton.onclick = () =>{
-    showGrid();
+    grid();
   }
 
   listButton.onclick = () => {
-    showList();
+    list();
   }
+/*fotos se desforman*/
 
-/*/*NO ANDAN DESCRIPCIONES SFSSGSSS */
-
-////////////////////* filtros */////////////////////
-/*EJECUCION FILTROS/BOTON LIMPIAR*/
+/*----------------------------------- F/X) FILTROS  -------------------------------*/
+/*ejecución filtros:*/
 /*
 Seleccionar elementos y guardarnos en const (OK)
 recorrer todos los filters 
@@ -90,11 +95,17 @@ evocar f(x) si hay algun filtro onclick.
 filtrar productos en consecuencia (a traves de c/ f(x))
 dar resultado 
 
+/*BOTON LIMPIAR FILTROS
 onclick clear-btn = limpiar todos los filtros (OK)
 */
 
+// veo si datas ok: //
+// for (let product of products){
+//   console.log(product.dataset)
+// }
 
-/*FUNCIONES GENERALES*/
+
+/*F/X) HIDE/SHOW QUE REUTILIZO*/
 
 /*Para mostrar u ocultar productos:*/
 const hide = (product) => {
@@ -105,24 +116,19 @@ const show = (product) => {
   return product.classList.remove("hidden");
 };
 
-// veo si datas ok: //
-// for (let product of products){
-//   console.log(product.dataset)
-// }
-
-/////////////////////*F(X) FILTRAR PRODUCTOS GRAL => *////////////////////////
+/////////////////////*F(X) FILTRAR PRODUCTOS MAIN => *////////////////////////
 
 const runAllFilters = (product) => {
-  if (inputFilter(product) && categoryFilter(product)&& starsFilters(products)){
+  if (starsFilter(product) && checkboxesFilter(product) && inputFilter(product)) {
     return true
   }
   else {
     return false
   }
-};
+}
 
 /*******************************FILTRO POR INPUT***********************************/
-
+/*SOLO OK)
 /* f(x) si hay algo escrito en el input: */
 const somethingInInput = () => {
   if (inputSearch.value) {
@@ -133,7 +139,7 @@ const somethingInInput = () => {
   }
 };
 
-// /*Compara input/producto:*/
+// // /*Compara input/producto:*/
 const compareInputProduct = (product) => {
   if (product.dataset.name.includes(inputSearch.value.toLowerCase())) {
     return true;
@@ -156,10 +162,10 @@ const runInputFilter = (product) => {
   }
 };
 
-// /* Filtra los productos por INPUT y muestra/oculta*/
+// // /* Filtra los productos por INPUT y muestra/oculta*/
 const inputFilter = () => {
   for (let product of products) {
-    if (runInputFilter(product)&& runAllFilters){
+    if (runInputFilter(product)){
       show(product)
     } 
     else {
@@ -171,7 +177,7 @@ const inputFilter = () => {
 
 // // /***************************FILTRO CHECKBOX***************************************/
 
-// /* f(x) si hay algún checkbox categoría checkeado:*/
+/* f(x) si hay algún checkbox categoría checkeado:*/
 const checkboxCategoryChecked = () => {
   for (let categoryCheckbox of categoryFilters) {
     if (categoryCheckbox.checked) {
@@ -212,7 +218,7 @@ const runCategoryFilter = (product) => {
 
 const categoryFilter = () => {
   for (let product of products) {
-    if (runCategoryFilter(product) && runAllFilters(product)) {
+    if (runCategoryFilter(product)) {
       show(product);
     } 
     else {
@@ -233,6 +239,7 @@ const checkboxStarsChecked = () => {
   return false;
 };
 
+/* f(x) compara estrellas/productos: */
 const compareStars = (product) => {
   for (let starsCheckbox of starsFilters) {
     if (starsCheckbox.checked) {
@@ -244,7 +251,8 @@ const compareStars = (product) => {
   return false
 };
 
-const RunStarsFilter = (product) => {
+/* f(x) corre filtro */
+const runStarsFilter = (product) => {
   if (checkboxStarsChecked()) {
     if (compareStars(product)) {
       return true;
@@ -257,10 +265,10 @@ const RunStarsFilter = (product) => {
     return true;
   }
 };
-
+/* f(x) resultado pasa filtro muestra/oclta*/
 const starsFilter = () => {
   for (let product of products){
-    if (checkboxStarsChecked(product)){
+    if (runStarsFilter(product)){
       show(product)
     }
     else {
@@ -270,22 +278,29 @@ const starsFilter = () => {
 }
 
 
- /* ver si hay evento=> si lo hay, RunFilters */
+//  EVENTOS => (ver si hay evento=> si lo hay, pasa por los filtros */
+
+/*evento input*/
 inputSearch.oninput = () => {
   // console.log('hay algo escrito')
   inputFilter();
  };
+
+/*evento category*/
 for (let checkboxCategory of categoryFilters) {
   checkboxCategory.oninput = () => {
     categoryFilter();
   };
 }
-
+/*evento stars*/
 for (let starsCheckbox of starsFilters) {
   starsCheckbox.oninput = () => {
+    // console.log(' hay estrella checked')
     starsFilter();
   };
 }
+
+
 // //--------------------Limpiar Busqueda-------------------------//
 
 /* f/x) limpiar todo*/
