@@ -13,7 +13,7 @@
 * Maquetado con FLEX
 * GIT
 
-# Web resources:
+## Web resources:
 * (https://fontawesome.com/) 
 * (https://devicons.github.io/devicon/)
 * (https://fonts.google.com/)

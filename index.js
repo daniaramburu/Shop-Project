@@ -39,6 +39,9 @@ console.log(checkboxesFilter);
 console.log(clearAllFiltersBtn);
 /*ok*/
 
+/*cambiar numero*/
+const quantityOfProducts = document.querySelector("#products-quantity")
+console.log(quantityOfProducts)
 
 /*FUNCIONES*/ 
 
@@ -110,7 +113,7 @@ const show = (product) => {
 /////////////////////*F(X) FILTRAR PRODUCTOS GRAL => *////////////////////////
 
 const runAllFilters = (product) => {
-  if (inputFilter(product) && categoryFilter(product)){
+  if (inputFilter(product) && categoryFilter(product)&& starsFilters(products)){
     return true
   }
   else {
@@ -310,3 +313,11 @@ clearAllFiltersBtn.onclick = () => {
   clearInput();
   showAllProd();
 };
+
+//-------------------Modificar Cantidad productos seleccionados-----------//
+
+const changeNumberProducts= () => {
+  const hiddenProducts = document.querySelectorAll("product.hidden")
+  let quantity = 12 - hiddenProducts.length
+  quantityOfProducts.textContent = "Mostrando" + " " + quantity + " " + "de 12 productos"
+}
