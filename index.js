@@ -1,82 +1,26 @@
-/*FUNCIONES GENERALES*/
-const hide = (product) => {
-  return product.classList.add("hidden");
-};
+/*GRID- LIST */
 
-const show = (product) => {
-  return product.classList.remove("hidden");
-};
-
-/*GRID- LIST*/
-/*selecciono*/
-// const gridButton = document.querySelector('#grid-btn')
-// const listButton = document.querySelector('#list-btn')
-// const productsList = document.querySelector('.products-list');
-// const productsDescriptions = document.querySelectorAll('.product-description');//todas las descripciones de los productos
+const gridButton = document.querySelector('#grid-btn')
+const listButton = document.querySelector('#list-btn')
+const productsList = document.querySelector('.products-list');
+const productsDescriptions = document.querySelectorAll('.product-description');//todas las descripciones de los productos
 
 /*pruebo si selecciona*/
-// console.log(gridButton)
-// console.log(listButton)
-// console.log(productsList)
-// console.log(productsDescriptions)
+console.log(gridButton)
+console.log(listButton)
+console.log(productsList)
+console.log(productsDescriptions)
+/*ok*/
 
-/* f(x) para mostrar en grid: **/
-//   showGrid = () =>{
-//     productsList.classList.remove("in-stack")
-//     productsList.classList.add("grid")
-
-//     for(let product of productsList){
-//       product.classList.remove("line")
-//     }
-
-//     for(let desc of productsDescriptions){
-//       hide(desc);
-//     }
-//   }
-
-// showList = () =>{
-//    productsList.classList.remove("grid")
-//     productsList.classList.add("in-stack")
-
-//     for(let product of productsList){
-//       product.classList.add("line");
-//     }
-//     for(let desc of productsDescriptions){
-//       show(desc);
-//     }
-//   }
-
-//   gridButton.onclick = () =>{
-//     showGrid();
-//   }
-
-//   listButton.onclick = () => {
-//     showList();
-//   }
-
-/*/*NO ANDAN DESCRIPCIONES SFSSGSSS */
-
-////////////////////* filtros */////////////////////
-/*EJECUCION FILTROS/BOTON LIMPIAR*/
-/*
-Seleccionar elementos y guardarnos en const (OK)
-recorrer todos los filters 
-evocar f(x) si hay algun filtro onclick.
-filtrar productos en consecuencia (a traves de c/ f(x))
-dar resultado 
-
-onclick clear-btn = limpiar todos los filtros (OK)(PONELE)
-*/
-
-/*selecciono*/
+/*FILTROS*/
 const inputSearch = document.querySelector("#input-search"); /*CAJA BUSQUEDA*/
 const products = document.getElementsByClassName(
   "product"
 ); /*LISTA DE PRODUCTOS*/
-const starsFilter = document.getElementsByClassName(
+const starsFilters = document.getElementsByClassName(
   "filter-review"
 ); /*LISTA DE STRE*/
-const categoryFilter = document.getElementsByClassName(
+const categoryFilters = document.getElementsByClassName(
   "filter-category"
 ); /* LISTA DE CATEGORIAS*/
 const checkboxesFilter = document.querySelectorAll(
@@ -89,190 +33,280 @@ const allCheckboxes = document.querySelectorAll(
 
 console.log(inputSearch);
 console.log(products);
-console.log(starsFilter);
-console.log(categoryFilter);
+console.log(starsFilters);
+console.log(categoryFilters);
 console.log(checkboxesFilter);
 console.log(clearAllFiltersBtn);
 /*ok*/
 
 
+/*FUNCIONES*/ 
+
+/* f(x) para mostrar en grid: **/
+  showGrid = () =>{
+    productsList.classList.remove("in-stack")
+    productsList.classList.add("grid")
+
+    for(let product of productsList){
+      product.classList.remove("line")
+    }
+
+    for(let desc of productsDescriptions){
+      hide(desc);
+    }
+  }
+
+showList = () =>{
+   productsList.classList.remove("grid")
+    productsList.classList.add("in-stack")
+
+    for(let product of productsList){
+      product.classList.add("line");
+    }
+    for(let desc of productsDescriptions){
+      show(desc);
+    }
+  }
+
+  gridButton.onclick = () =>{
+    showGrid();
+  }
+
+  listButton.onclick = () => {
+    showList();
+  }
+
+/*/*NO ANDAN DESCRIPCIONES SFSSGSSS */
+
+////////////////////* filtros */////////////////////
+/*EJECUCION FILTROS/BOTON LIMPIAR*/
+/*
+Seleccionar elementos y guardarnos en const (OK)
+recorrer todos los filters 
+evocar f(x) si hay algun filtro onclick.
+filtrar productos en consecuencia (a traves de c/ f(x))
+dar resultado 
+
+onclick clear-btn = limpiar todos los filtros (OK)
+*/
+
+
+/*FUNCIONES GENERALES*/
+
+/*Para mostrar u ocultar productos:*/
+const hide = (product) => {
+  return product.classList.add("hidden");
+};
+
+const show = (product) => {
+  return product.classList.remove("hidden");
+};
+
+// veo si datas ok: //
 // for (let product of products){
 //   console.log(product.dataset)
 // }
 
+/////////////////////*F(X) FILTRAR PRODUCTOS GRAL => *////////////////////////
 
-//PRIMEROS INTENTOS DE F(X)
+const runAllFilters = (product) => {
+  if (inputFilter(product) && categoryFilter(product)){
+    return true
+  }
+  else {
+    return false
+  }
+};
 
-/*busqueda por input*/
-// inputSearch.oninput = () => {
-//   for (let product of products) {
-//     if (product.dataset.name.includes(inputSearch.value.toLowerCase())) {
-//       product.classList.remove("hidden");
-//     } else {
-//       product.classList.add("hidden");
-//     }
-//   }
-// };
+/*******************************FILTRO POR INPUT***********************************/
 
-// /*busqueda por categoria*/
-// for (let checkboxCategory of categoryFilter) {
-//   checkboxCategory.oninput = () => {
-//     // console.log(checkboxCategory.dataset.category)
-//     for (let product of products) {
-//       product.classList.add("hidden");
-//       for (let checkboxCategory2 of categoryFilter) {
-//         if (checkboxCategory2.checked) {
-//           if (checkboxCategory2.dataset.category === product.dataset.category) {
-//             product.classList.remove("hidden");
-//           }
-//         }
-//       }
-//     }
-//   };
-// }
-// /*busqueda por estrella*/
+/* f(x) si hay algo escrito en el input: */
+const somethingInInput = () => {
+  if (inputSearch.value) {
+    return true;
+    // ingresa string, coercionan siempre true
+  } else {
+    return false;
+  }
+};
 
-// for (let estrella of starsFilter) {
-//   estrella.oninput = () => {
-//     // console.log(estrella.value)
-//     // if (estrella.checked) {
-//     for (let product of products) {
-//       product.classList.add("hidden");
-//       for (let estrella2 of starsFilter) {
-//         if (estrella2.checked) {
-//           if (estrella2.value === product.dataset.stars) {
-//             product.classList.remove("hidden");
-//           }
-//         }
-//       }
-//     }
-//   };
-// }
+// /*Compara input/producto:*/
+const compareInputProduct = (product) => {
+  if (product.dataset.name.includes(inputSearch.value.toLowerCase())) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+// /*Pasa filtros Input*/
+
+const runInputFilter = (product) => {
+  if (somethingInInput()) {
+    if (compareInputProduct(product)) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return true;
+  }
+};
+
+// /* Filtra los productos por INPUT y muestra/oculta*/
+const inputFilter = () => {
+  for (let product of products) {
+    if (runInputFilter(product)&& runAllFilters){
+      show(product)
+    } 
+    else {
+      hide(product)
+    }
+  }
+}
 
 
+// // /***************************FILTRO CHECKBOX***************************************/
 
-/* f(x) Que pase todo junto:*/
-//f(x) filtersMatch con parametro de cada tarjeta revisa si hay evento y retorna t/f
-
+// /* f(x) si hay algún checkbox categoría checkeado:*/
 const checkboxCategoryChecked = () => {
-  for (categoryCheckbox of categoryFilter) {
+  for (let categoryCheckbox of categoryFilters) {
     if (categoryCheckbox.checked) {
       return true;
     }
   }
-  return false
-  
+  return false;
+};
+/*compara filtro/producto*/
+const compareCategory = (product) => {
+  for (let checkboxCategory of categoryFilters) {
+    if (checkboxCategory.checked) {
+      if (checkboxCategory.dataset.category === product.dataset.category) {
+        return true;
+      }
+    }
+  }
+  return false;
 };
 
+/*Pasa filtros category*/
+
+const runCategoryFilter = (product) => {
+  if (checkboxCategoryChecked()) {
+    if (compareCategory(product)) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  } 
+  else {
+    return true
+  }
+};
+
+/*Resultado pasa filtros categoria muestra/oculta*/
+
+const categoryFilter = () => {
+  for (let product of products) {
+    if (runCategoryFilter(product) && runAllFilters(product)) {
+      show(product);
+    } 
+    else {
+      hide(product);
+    }
+  }
+};
+
+/********************************FILTRO POR ESTRELLA*****************************/
+
+/* f(X) si hay algún checkbox estrella checkeado: */
 const checkboxStarsChecked = () => {
-  for (starsCheckbox of starsFilter) {
-    if (starsCheckbox.checked){
-      return true
+  for (starsCheckbox of starsFilters) {
+    if (starsCheckbox.checked) {
+      return true;
+    }
+  }
+  return false;
+};
+
+const compareStars = (product) => {
+  for (let starsCheckbox of starsFilters) {
+    if (starsCheckbox.checked) {
+      if (starsCheckbox.value === product.dataset.stars) {
+        return true
+      }
     }
   }
   return false
 };
 
-const somethingInInput = () => {
-  if (inputSearch.value) {
-  return true
+const RunStarsFilter = (product) => {
+  if (checkboxStarsChecked()) {
+    if (compareStars(product)) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  } 
+  else {
+    return true;
   }
-  return false
 };
 
+const starsFilter = () => {
+  for (let product of products){
+    if (checkboxStarsChecked(product)){
+      show(product)
+    }
+    else {
+      hide(product)
+    }
+  }
+}
 
 
-// const runFilters = () => {
-//   for (product of products) {
-//     if (filtersMatch(product)) {
-//       hide(product);
-//     } else {
-//       show(product);
-//     }
-//   }
-// };
+ /* ver si hay evento=> si lo hay, RunFilters */
+inputSearch.oninput = () => {
+  // console.log('hay algo escrito')
+  inputFilter();
+ };
+for (let checkboxCategory of categoryFilters) {
+  checkboxCategory.oninput = () => {
+    categoryFilter();
+  };
+}
 
-// /* ver si hay evento */
+for (let starsCheckbox of starsFilters) {
+  starsCheckbox.oninput = () => {
+    starsFilter();
+  };
+}
+// //--------------------Limpiar Busqueda-------------------------//
 
-// inputSearch.oninput = () => {
-//   runFilters();
-// };
+/* f/x) limpiar todo*/
+const clearInput = () => {
+  inputSearch.value = "";
+};
 
-// for (let checkboxCategory of categoryFilter) {
-//   checkboxCategory.oninput = () => {
-//     runFilters();
-//   };
-// }
+const clearCheckboxes = () => {
+  for (let checkbox of allCheckboxes) {
+    if (checkbox.checked) {
+      checkbox.checked = false;
+    }
+  }
+};
 
-// for (let estrella of starsFilter) {
-//   estrella.oninput = () => {
-//     runFilters();
-//   };
-// }
+const showAllProd = () => {
+  for (let product of products) {
+    show(product);
+  }
+};
 
-// const filtrarElementos = () => {
-//   for (let product of products) {
-//     if (pasaFiltros(element)) {
-//       mostrar(element);
-//     } else {
-//       ocultar(element);
-//     }
-//   }
-// };
-
-
-
-// BUSCAR POR NOMBRE pensadondolo mejor //
-
-// const somethingInInput = () => {
-//   if (inputSearch.value) {
-//   //  console.log('hay algo escrito');
-//   } else {
-//    // console.log('no hay nada escrito')
-//   }
-// };
-
-// const compareInputProduct = (element) => {
-//   if (element.dataset.name.includes(inputSearch.value.toLowerCase())){
-//     return true
-//   }
-//   else {
-//     return false
-//   }
-// }
-
-// const runInputFilter =  (element)=> {
-//   if (somethingInInput()){
-//     if(compareInputProduct(element)){
-//       return true
-//     }
-//     else {
-//       return false
-//     }
-//   }
-//   else {
-//     return false
-//   }
-// }
-
-// const inputFilter = () => {
-//   for (let element of products){
-//     if (runInputFilter(element) && runInputFilter(element)){
-//       mostrar(element)
-//     }
-//     else {
-//       ocultar(element)
-//     }
-//   }
-// }
-
-// //------------Limpiar Busqueda--------------//
-// clearAllFiltersBtn.on click = () => {
-//   inputSearch.value = "";
-//   for (let producto of products) {
-//     producto.classList.remove("hidden");
-//   }
-//   for (let checkbox of allCheckboxes) {
-//     checkbox.checked = false;
-//   }
-// };
+/*Evento apreta botón limpiar*/
+clearAllFiltersBtn.onclick = () => {
+  clearCheckboxes();
+  clearInput();
+  showAllProd();
+};
