@@ -12,10 +12,105 @@
 </head>
 
 <body>
+    <!-------------------CARRITO---------->
+    <!--OVERLAYs-->
+    <div id="overlay" class="hidden" aria-hidden="true">
+    </div>
+    <div id="overlay2" class="hidden" aria-hidden="true">
+    </div>
+
+    <!---carrito con productos-->
+    <div id="car-shop-menu" class="hidden">
+        <header class="car-title">
+            <h2>Carrito</h2>
+            <button aria-label="cerrar el carrito" class="close-car-shop-menu"><i class="fas fa-times"></i></button>
+        </header>
+        <p aria-label="Cantidad de productos en el carrito" aria-live="assertive">2 producto(s) agregado(s)</p>
+
+        <div class="car-container">
+
+            <article class="product-in-car">
+                <div class="car-prod-container">
+                    <img src="img/cheesecakecacrrito1.jpg" alt="Torta cheesecake con frutos rojos" id="img-car" />
+                    <div class="car-prod-description">
+                        <div class="title-car-product">
+                            <h3>Cheesecake de frutos rojos</h3>
+                            <div class="trash-ico">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+
+                        <div class="qty-price-container">
+                            <div class="cantidad-producto-carrito">
+                                <input class="input-de-carrito"
+                                    aria-label="Introduzca la cantidad de productos que se quiere llevar"
+                                    aria-live="assertive" type="number" value="1">
+                                </input>
+                            </div>
+                            <div class="precio-de-producto-carrito">
+                                <p class="precioCarritoProducto" data-precioCarrito="1000" aria-label="Precio $ 1000"
+                                    aria-live="assertive">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="product-in-car">
+                <div class="car-prod-container">
+                    <img src="img/cookiescarrito.jpg" alt="Galletitas con chips de chocolate" id="img-car" />
+                    <div class="car-prod-description">
+                        <div class="title-car-product">
+                            <h3>Cookies con chips de chocolate</h3>
+                            <div class="trash-ico">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+
+                        <div class="qty-price-container">
+                            <div class="cantidad-producto-carrito">
+                                <input class="input-de-carrito"
+                                    aria-label="Introduzca la cantidad de productos que se quiere llevar"
+                                    aria-live="assertive" type="number" value="1">
+                                </input>
+                            </div>
+                            <div class="precio-de-producto-carrito">
+                                <p class="precioCarritoProducto" data-precioCarrito="500" aria-label="Precio $ 500"
+                                    aria-live="assertive">$500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+        </div>
+        <p class="subtotal-number" aria-live="assertive" aria-label="Subtotal del precio: $1500">Subtotal: $1500 </p>
+        <div class="car-button">
+            <button class="buy-car-btn" aria-label="Comprar productos agregados al carrito">Comprar</button>
+            <button class="empy-car-btn" aria-label="Deshacer todos los productos agregados al carrito">Vaciar</button>
+        </div>
+    </div>
+
+    <!--ADVERTENCIA VACIAR CARRITO-->
+
+    <div id="sing-empty-car-container" class="hidden">
+        <div class="sing-empty-car">
+            <h2>Estas por vaciar tu carrito, ¿Quieres continuar?</h2>
+            <button aria-label="cancelar el vaciado" class="btn-cancel-empty">Cancelar</button>
+            <button aria-label="vaciar el carrito" class="btn-confirm-empty">Vaciar</button>
+        </div>
+    </div>
+
+
+
+
 
     <!-------------------------HEADER PRINCIPAL----------------------->
 
     <header class="header line" id="header">
+
 
 
         <div class="header-marca">
@@ -23,630 +118,627 @@
             <p class="brand">ADA SHOP</p>
         </div>
 
-    
+
         <div>
-            <button type="button" class="btn-shop line button button-simple-empty">
+            <button type="button" class="btn-shop line button button-transparent">
                 <i class="fas fa-shopping-cart cart-icon"></i>
-                Carrito (<span class="car-quantity">0</span> ítems)
+                Carrito (2 ítems)
             </button>
         </div>
-       
+
     </header>
 
     <!------------------------ FIN HEADER PRINCIPAL--------------------->
+    <! <!--------------------------- BANNER --------------------------------->
 
+        <section class="banner-principal">
+            <div>
+                <img class="banner-img" src="img/ice_cream_cake_banner.jpg" />
+            </div>
+            <div>
+                <h1 class="banner-title">TIENDA DE PASTELERÍA</h1>
+            </div>
+        </section>
 
-    <!--------------------------- BANNER --------------------------------->
-
-    <section class="banner-principal">
-        <div>
-            <img class="banner-img" src="img/ice_cream_cake_banner.jpg" />
-        </div>
-        <div>
-            <h1 class="banner-title">TIENDA DE PASTELERÍA</h1>
-        </div>
-    </section>
-
-    <!--------------------------- FIN BANNER  ----------------------------->
+        <!--------------------------- FIN BANNER  ----------------------------->
 
 
 
 
 
-    <!-----------------------------MARKET -------------------------------->
+        <!-----------------------------MARKET -------------------------------->
 
-    <main id="shop">
-        <!----------- Filtros--------------- -->
+        <main id="shop">
+            <!----------- Filtros--------------- -->
 
-        <section class="filters-container line">
-            <aside>
+            <section class="filters-container line">
+                <aside>
 
-                <!--Header Filtros-->
-                <div class="filters-heading-container line">
+                    <!--Header Filtros-->
+                    <div class="filters-heading-container line">
 
-                    <div class="filters-title">
-                        <h2>FILTROS</h2>
-                    </div>
+                        <div class="filters-title">
+                            <h2>FILTROS</h2>
+                        </div>
 
-                    <div class="filters-clear-btn-container">
-                        <button type="button" class="clear-btn line">
-                            <i class="fas fa-trash-alt"></i>
-                            <h3 class="clear-title">Limpiar</h3>
-                        </button>
-                    </div>
-
-                </div>
-                <!-- fin Header Filtro -->
-
-
-
-                <!-- Filtro Busqueda -->
-                <div class="filters-search-container">
-
-                    <div>
-                        <h3>BUSQUEDA</h3>
-                    </div>
-
-                    <div class="input-search-container line">
-                        <input type="text" id="input-search" placeholder="¿Qué estás buscando?">
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
-
-                </div>
-                <!-- Fin Filtro Busqueda -->
-
-
-
-                <!-- Inicio Filtro Categoría -->
-                <div class="main-category-container">
-
-                    <div>
-                        <h3>CATEGORIA</h3>
-                    </div>
-
-                    <div class="checkboxes-container">
-
-                        <label for="category" class="input-checkboxes-container">
-
-                            <label class="input-category line">
-                                <input type="checkbox" class=" filter filter-category" name="category" data-category="sinazucar">
-                                </input>
-                                <h4>TORTAS SIN AZUCAR</h4>
-                            </label>
-
-                            <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" data-category="sintacc">
-                                </input>
-                                <h4>TORTAS SIN TACC</h4>
-                            </label>
-
-                            <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" data-category="budines">
-                                </input>
-                                <h4>BUDINES</h4>
-                            </label>
-
-                            <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" data-category="cookies">
-                                </input>
-                                <h4>COOKIES</h4>
-                            </label>
-
-                            <label class="input-category line">
-                                <input type="checkbox" class="filter filter-category" name="category" data-category="postres">
-                                </input>
-                                <h4>POSTRES</h4>
-                            </label>
-
-                        </label>
-                    </div>
-                </div>
-                <!-- Fin Filtro Categoria -->
-
-
-
-                <!-- Inicio Filtro Estrellas -->
-
-                <div class="stars-container">
-
-                    <div>
-                        <h3>PUNTAJE</h3>
-                    </div>
-
-                    <div class="filters-stars">
-
-                        <label class="star-input line">
-                            <input type="checkbox" name="stars" class="filter filter-review" value="5">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <h4>(5)</h4>
-                            </input>
-                        </label>
-
-                        <label class="star-input line">
-                            <input type="checkbox" name="stars" class="filter filter-review" value="4">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <h4>(4)</h4>
-                            </input>
-                        </label>
-
-                        <label class="star-input line">
-                            <input type="checkbox" name="stars" class="filter filter-review" value="3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <h4>(3)</h4>
-                            </input>
-                        </label>
-
-                        <label class="star-input line">
-                            <input type="checkbox" name="stars" class="filter filter-review" value="2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <h4>(2)</h4>
-                            </input>
-                        </label>
-
-                        <label class="star-input line">
-                            <input type="checkbox" name="stars" class="filter filter-review" value="1">
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <h4>(1)</h>
-                            </input>
-                        </label>
+                        <div class="filters-clear-btn-container">
+                            <button type="button" class="clear-btn line">
+                                <i class="fas fa-trash-alt"></i>
+                                <h3 class="clear-title">Limpiar</h3>
+                            </button>
+                        </div>
 
                     </div>
-                    <!-- Fin Filtro Estrellas -->
-                </div>
-            </aside>
-
-
-            <!--------------------Fin Filtros ------------------------>
+                    <!-- fin Header Filtro -->
 
 
 
-            <!--------------------- Productos ---------------------------->
+                    <!-- Filtro Busqueda -->
+                    <div class="filters-search-container">
 
-            <section class="products-container">
-
-                <!--  Inicia header de productos  -->
-                <header class="products-header line">
-                    <div>
-                        <p id="products-quantity">Mostrando 12 producto(s) de 12</p>
-                    </div>
-                    <div class="view-buttons-container line ">
                         <div>
-                            <p>Ver como</p>
+                            <h3>BUSQUEDA</h3>
                         </div>
-                        <div id="grid-btn">
-                            <button type="button">
-                                <i class="fas fa-th"></i>
-                            </button>
+
+                        <div class="input-search-container line">
+                            <input type="text" id="input-search" placeholder="¿Qué estás buscando?">
+                            <i class="fas fa-search search-icon"></i>
                         </div>
-                        <div id="list-btn">
-                            <button type="button">
-                                <i class="fas fa-list" aria-hidden="true"></i>
-                            </button>
+
+                    </div>
+                    <!-- Fin Filtro Busqueda -->
+
+
+
+                    <!-- Inicio Filtro Categoría -->
+                    <div class="main-category-container">
+
+                        <div>
+                            <h3>CATEGORIA</h3>
+                        </div>
+
+                        <div class="checkboxes-container">
+
+                            <label for="category" class="input-checkboxes-container">
+
+                                <label class="input-category line">
+                                    <input type="checkbox" class=" filter filter-category" name="category"
+                                        data-category="sinazucar">
+                                    </input>
+                                    <h4>TORTAS SIN AZUCAR</h4>
+                                </label>
+
+                                <label class="input-category line">
+                                    <input type="checkbox" class="filter filter-category" name="category"
+                                        data-category="sintacc">
+                                    </input>
+                                    <h4>TORTAS SIN TACC</h4>
+                                </label>
+
+                                <label class="input-category line">
+                                    <input type="checkbox" class="filter filter-category" name="category"
+                                        data-category="budines">
+                                    </input>
+                                    <h4>BUDINES</h4>
+                                </label>
+
+                                <label class="input-category line">
+                                    <input type="checkbox" class="filter filter-category" name="category"
+                                        data-category="cookies">
+                                    </input>
+                                    <h4>COOKIES</h4>
+                                </label>
+
+                                <label class="input-category line">
+                                    <input type="checkbox" class="filter filter-category" name="category"
+                                        data-category="postres">
+                                    </input>
+                                    <h4>POSTRES</h4>
+                                </label>
+
+                            </label>
                         </div>
                     </div>
-                </header>
+                    <!-- Fin Filtro Categoria -->
 
-                <!----  fin header de productos  ---->
 
-                <!---- Inicia listado Productos ----->
 
-                <div class="products-list grid">
+                    <!-- Inicio Filtro Estrellas -->
 
-                    <!--Cheesecake frutos rojos-->
+                    <div class="stars-container">
 
-                    <article class="product" data-id="0" data-name="cheescake frutos rojos" data-category="tortas"
-                        data-price="1000" data-image="img/cheesecake.jpg" data-stars="3">
-
-                        <div class="product-img-container line">
-                            <img src="img/cheesecake.jpg" alt="Torta cheesecake con frutos rojos" class="product-img" />
+                        <div>
+                            <h3>PUNTAJE</h3>
                         </div>
 
-                        <div class="product-content column">
-                            <h2 class="product-name">Cheescake Frutos Rojos</h2>
-                            <p class="product-price">$ 1000</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                            </div>
+                        <div class="filters-stars">
+
+                            <label class="star-input line">
+                                <input type="checkbox" name="stars" class="filter filter-review" value="5">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <h4>(5)</h4>
+                                </input>
+                            </label>
+
+                            <label class="star-input line">
+                                <input type="checkbox" name="stars" class="filter filter-review" value="4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <h4>(4)</h4>
+                                </input>
+                            </label>
+
+                            <label class="star-input line">
+                                <input type="checkbox" name="stars" class="filter filter-review" value="3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <h4>(3)</h4>
+                                </input>
+                            </label>
+
+                            <label class="star-input line">
+                                <input type="checkbox" name="stars" class="filter filter-review" value="2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <h4>(2)</h4>
+                                </input>
+                            </label>
+
+                            <label class="star-input line">
+                                <input type="checkbox" name="stars" class="filter filter-review" value="1">
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <h4>(1)</h>
+                                    </input>
+                            </label>
+
+                        </div>
+                        <!-- Fin Filtro Estrellas -->
+                    </div>
+                </aside>
+
+
+                <!--------------------Fin Filtros ------------------------>
+
+
+
+                <!--------------------- Productos ---------------------------->
+
+                <section class="products-container">
+
+                    <!--  Inicia header de productos  -->
+                    <header class="products-header line">
+                        <div>
+                            <p id="products-quantity">Mostrando 12 producto(s) de 12</p>
+                        </div>
+                        <div class="view-buttons-container line ">
                             <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                 id= "0">
-                                    Comprar
+                                <p>Ver como</p>
+                            </div>
+                            <div id="grid-btn">
+                                <button type="button">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                            </div>
+                            <div id="list-btn">
+                                <button type="button">
+                                    <i class="fas fa-list" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="product-description hidden"> 
-                           <p> Clásico cheesecake hecho con base de galletitas sin azucar caseras y cobertura de frutos rojos al natural.</p>
-                            </div>
-                    </article>
+                    </header>
 
-                    <!--Cheesecake maracuya-->
+                    <!----  fin header de productos  ---->
 
-                    <article class="product " data-id="1" data-name="cheesecake maracuya" data-category="tortas"
-                        data-price="1000" data-image="img/cheesecakemara.jpg" data-stars="5">
-                        <div class="product-img-container line">
-                            <img src="img/cheesecakemara.jpg" alt="" class="product-img" />
-                        </div>
+                    <!---- Inicia listado Productos ----->
 
-                        <div class="product-content column">
-                            <h2 class="product-name">Cheescake Maracuyá</h2>
-                            <p class="product-price">$ 1000</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
+                    <div class="products-list grid">
+
+                        <!--Cheesecake frutos rojos-->
+
+                        <article class="product" data-id="0" data-name="cheescake frutos rojos" data-category="tortas"
+                            data-price="1000" data-image="img/cheesecake.jpg" data-stars="3">
+
+                            <div class="product-img-container line">
+                                <img src="img/cheesecake.jpg" alt="Torta cheesecake con frutos rojos"
+                                    class="product-img" id="img-car" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid  btn-add-car"
-                                id= "1">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Cheescake Frutos Rojos</h2>
+                                <p class="product-price">$ 1000</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="0">
+                                        Comprar
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Clásico cheesecake con base de galletitas caseras sin azúcar y cobertura de salsa de maracuyá natural.</p>
+                            <div class="product-description hidden">
+                                <p> Clásico cheesecake hecho con base de galletitas sin azucar caseras y cobertura de
+                                    frutos rojos al natural.</p>
                             </div>
-                    </article>
+                        </article>
 
-                    <!--Cookies-->
+                        <!--Cheesecake maracuya-->
 
-                    <article class="product " data-id="2" data-name="cookies" data-category="cookies"
-                        data-price="500" data-image="img/cookies.jpg" data-stars="2">
-                        <div class="product-img-container line">
-                            <img src="img/cookies.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Cookies Avena</h2>
-                            <p class="product-price">$ 500</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                            </div>
-
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "2">
-                                    Comprar
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-description hidden">
-                           <p> Cookies de avena con chips de chocolate amargo al %85 </p>
-                        </div>
-                    </article>
-
-                    <!--Budín manzana-->
-
-                    <article class="product " data-id="3" data-name="budin carrot cake" data-category="budines"
-                        data-price="600" data-image="img/budinmanzana" data-stars="3">
-                        <div class="product-img-container line">
-                            <img src="img/budinzana.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Budín Carrot Cake</h2>
-                            <p class="product-price">$ 600</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
+                        <article class="product " data-id="1" data-name="cheesecake maracuya" data-category="tortas"
+                            data-price="1000" data-image="img/cheesecakemara.jpg" data-stars="5">
+                            <div class="product-img-container line">
+                                <img src="img/cheesecakemara.jpg" alt="" class="product-img" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "3">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Cheescake Maracuyá</h2>
+                                <p class="product-price">$ 1000</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid  btn-add-car" id="1">
+                                        Comprar
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Budín de zanahoria cómo ingrediente principal, naranja y frutos secos(edulzado con stevia granulada)</p>
+                            <div class="product-description hidden">
+                                <p>Clásico cheesecake con base de galletitas caseras sin azúcar y cobertura de salsa de
+                                    maracuyá natural.</p>
                             </div>
-                    </article>
+                        </article>
 
-                    <!--Tarteleta de pastelera-->
-                    <article class="product " data-id="4" data-name="tarteleta pastelera" data-category="postres"
-                        data-price="400" data-image="images/switch.jpg" data-stars="5">
-                        <div class="product-img-container line">
-                            <img src="img/postre.jpg" alt="" class="product-img" />
-                        </div>
+                        <!--Cookies-->
 
-                        <div class="product-content column">
-                            <h2 class="product-name">Tarteleta de pastelera y frutillas</h2>
-                            <p class="product-price">$ 400</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                            </div>
-
-                            <div>
-                                <button type="button" class="button button-simple-solid button-add-to-cart"
-                                id= "4">
-                                    Comprar
-                                </button>
-                            </div>
-                            
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Masa samblee, crema pastelera y frutillas al natural (endulzadas con stevia granulada)</p>
-                            </div>
-                    </article>
-
-                    <!--Scones-->
-
-                    <article class="product " data-id="5" data-name="scones" data-category="budines"
-                        data-price="600" data-image="img/scones.jpg" data-stars="1">
-                        <div class="product-img-container line">
-                            <img src="img/scones.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Scones de frutos rojos</h2>
-                            <p class="product-price">$ 600</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
+                        <article class="product " data-id="2" data-name="cookies" data-category="cookies"
+                            data-price="500" data-image="img/cookies.jpg" data-stars="2">
+                            <div class="product-img-container line">
+                                <img src="img/cookies.jpg" alt="Galletitas con chips de chocolate" class="product-img"
+                                    id="img-car" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "5">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Cookies Avena</h2>
+                                <p class="product-price">$ 500</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="2">
+                                        Comprar
+                                    </button>
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Scones con frutos rojos.</p>
+                            <div class="product-description hidden">
+                                <p> Cookies de avena con chips de chocolate amargo al %85 </p>
                             </div>
-                    </article>
+                        </article>
 
-                    <!--Lemon Pie-->
+                        <!--carrot cake-->
 
-                    <article class="product " data-id="6" data-name="lemon pie" data-category="sintacc"
-                        data-price="1500" data-image="images/msi.png" data-stars="3">
-                        <div class="product-img-container line">
-                            <img src="img/lemon.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Lemon Pie</h2>
-                            <p class="product-price">$ 1500</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
+                        <article class="product " data-id="3" data-name="budin carrot cake" data-category="budines"
+                            data-price="600" data-image="img/budinmanzana" data-stars="3">
+                            <div class="product-img-container line">
+                                <img src="img/budinzana.jpg" alt="Budin carrot cake" class="product-img" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "6">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Budín Carrot Cake</h2>
+                                <p class="product-price">$ 600</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="3">
+                                        Comprar
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Clásico Lemon Pie, hecho con base de galletitas de harina de almendras.</p>
+                            <div class="product-description hidden">
+                                <p>Budín de zanahoria cómo ingrediente principal, naranja y frutos secos(edulzado con
+                                    stevia granulada)</p>
                             </div>
-                    </article>
+                        </article>
 
-                    <!--Tarteleta de ricota y frutos rojos-->
-
-                    <article class="product " data-id="7" data-name="tarteleta ricota"
-                        data-category="postres" data-price="500" data-image="img/postre1.jpeg"
-                        data-stars="2">
-                        <div class="product-img-container line">
-                            <img src="img/postre1.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Tarteleta de ricota y frutos rojos</h2>
-                            <p class="product-price">$ 500</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
+                        <!--Tarteleta de pastelera-->
+                        <article class="product " data-id="4" data-name="tarteleta pastelera" data-category="postres"
+                            data-price="400" data-image="images/switch.jpg" data-stars="5">
+                            <div class="product-img-container line">
+                                <img src="img/postre.jpg" alt="" class="product-img" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "7">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Tarteleta de pastelera y frutillas</h2>
+                                <p class="product-price">$ 400</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid button-add-to-cart" id="4">
+                                        Comprar
+                                    </button>
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Tarteleta de ricota con salsa de frutos rojos sin azúcar</p>
+                            <div class="product-description hidden">
+                                <p>Masa samblee, crema pastelera y frutillas al natural (endulzadas con stevia
+                                    granulada)</p>
                             </div>
-                    </article>
+                        </article>
 
-                    <!--Brownie-->
+                        <!--Scones-->
 
-                    <article class="product " data-id="8" data-name="brownie" data-category="sinazucar"
-                        data-price="800" data-image="images/macbook.png" data-stars="4">
-                        <div class="product-img-container line">
-                            <img src="img/brownie.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Brownie</h2>
-                            <p class="product-price">$ 800</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                            </div>
-
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "8">
-                                    Comprar
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Capas de brownie amargo, dulce de leche sin azucar, arandanos y frutillas</p>
-                            </div>
-                    </article>
-
-                    <!--Torta de ricotta-->
-
-                    <article class="product " data-id="9" data-name="torta de ricotta" data-category="tortas"
-                        data-price="1500" data-image="img/ricota.jpg" data-stars="3">
-                        <div class="product-img-container line">
-                            <img src="img/ricotta.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Torta Ricotta</h2>
-                            <p class="product-price">$ 1500</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
+                        <article class="product " data-id="5" data-name="scones" data-category="budines"
+                            data-price="600" data-image="img/scones.jpg" data-stars="1">
+                            <div class="product-img-container line">
+                                <img src="img/scones.jpg" alt="" class="product-img" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "9">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Scones de frutos rojos</h2>
+                                <p class="product-price">$ 600</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="5">
+                                        Comprar
+                                    </button>
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Base de galletitas de harina de almendras, 500g de ricotta, con coco rallado arriba.</p>
+                            <div class="product-description hidden">
+                                <p>Scones con frutos rojos.</p>
                             </div>
-                    </article>
+                        </article>
 
-                    <!-- Budin Marmolado -->
+                        <!--Lemon Pie-->
 
-                    <article class="product " data-id="10" data-name="budin marmolado" data-category="budines"
-                        data-price="600" data-image="images/xbox.jpg" data-stars="4">
-                        <div class="product-img-container line">
-                            <img src="img/budinmarmolado.jpg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Budin Marmolado</h2>
-                            <p class="product-price">$ 600</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="far fa-star" aria-hidden="true"></i>
-                            </div>
-
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "10">
-                                    Comprar
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-description hidden">
-                            <p>Budín de vainilla y chocolate amargo</p>
-                            </div>
-                    </article>
-
-                    <!--Mini chocotorta-->
-
-                    <article class="product " data-id="11" data-name="mini chocotorta" data-category="postres"
-                        data-price="4999" data-image="img/chocotorta.jpeg" data-stars="5">
-                        <div class="product-img-container line">
-                            <img src="img/chocotorta.jpeg" alt="" class="product-img" />
-                        </div>
-
-                        <div class="product-content column">
-                            <h2 class="product-name">Mini Chocotortas</h2>
-                            <p class="product-price">$ 600</p>
-                            <div class="review filters-review">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
+                        <article class="product " data-id="6" data-name="lemon pie" data-category="sintacc"
+                            data-price="1500" data-image="images/msi.png" data-stars="3">
+                            <div class="product-img-container line">
+                                <img src="img/lemon.jpg" alt="" class="product-img" />
                             </div>
 
-                            <div>
-                                <button type="button" class="button button-simple-solid btn-add-car"
-                                id= "11">
-                                    Comprar
-                                </button>
+                            <div class="product-content column">
+                                <h2 class="product-name">Lemon Pie</h2>
+                                <p class="product-price">$ 1500</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="6">
+                                        Comprar
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="product-description hidden">
-                           <p> Mini chocotortas </p>
+                            <div class="product-description hidden">
+                                <p>Clásico Lemon Pie, hecho con base de galletitas de harina de almendras.</p>
                             </div>
-                    </article>
-                    <!--  fin listado Productos  -->
-            </section>
+                        </article>
 
-    </main>
+                        <!--Tarteleta de ricota y frutos rojos-->
 
-    <!--------------------------------  FIN CATALOGO------------------------------------------- -->
+                        <article class="product " data-id="7" data-name="tarteleta ricota" data-category="postres"
+                            data-price="500" data-image="img/postre1.jpeg" data-stars="2">
+                            <div class="product-img-container line">
+                                <img src="img/postre1.jpg" alt="" class="product-img" />
+                            </div>
+
+                            <div class="product-content column">
+                                <h2 class="product-name">Tarteleta de ricota y frutos rojos</h2>
+                                <p class="product-price">$ 500</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="7">
+                                        Comprar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-description hidden">
+                                <p>Tarteleta de ricota con salsa de frutos rojos sin azúcar</p>
+                            </div>
+                        </article>
+
+                        <!--Brownie-->
+
+                        <article class="product " data-id="8" data-name="brownie" data-category="sinazucar"
+                            data-price="800" data-image="images/macbook.png" data-stars="4">
+                            <div class="product-img-container line">
+                                <img src="img/brownie.jpg" alt="" class="product-img" />
+                            </div>
+
+                            <div class="product-content column">
+                                <h2 class="product-name">Brownie</h2>
+                                <p class="product-price">$ 800</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="8">
+                                        Comprar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-description hidden">
+                                <p>Capas de brownie amargo, dulce de leche sin azucar, arandanos y frutillas</p>
+                            </div>
+                        </article>
+
+                        <!--Torta de ricotta-->
+
+                        <article class="product " data-id="9" data-name="torta de ricotta" data-category="tortas"
+                            data-price="1500" data-image="img/ricota.jpg" data-stars="3">
+                            <div class="product-img-container line">
+                                <img src="img/ricotta.jpg" alt="" class="product-img" />
+                            </div>
+
+                            <div class="product-content column">
+                                <h2 class="product-name">Torta Ricotta</h2>
+                                <p class="product-price">$ 1500</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="9">
+                                        Comprar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-description hidden">
+                                <p>Base de galletitas de harina de almendras, 500g de ricotta, con coco rallado arriba.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Budin Marmolado -->
+
+                        <article class="product " data-id="10" data-name="budin marmolado" data-category="budines"
+                            data-price="600" data-image="images/xbox.jpg" data-stars="4">
+                            <div class="product-img-container line">
+                                <img src="img/budinmarmolado.jpg" alt="" class="product-img" />
+                            </div>
+
+                            <div class="product-content column">
+                                <h2 class="product-name">Budin Marmolado</h2>
+                                <p class="product-price">$ 600</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="10">
+                                        Comprar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-description hidden">
+                                <p>Budín de vainilla y chocolate amargo</p>
+                            </div>
+                        </article>
+
+                        <!--Mini chocotorta-->
+
+                        <article class="product " data-id="11" data-name="mini chocotorta" data-category="postres"
+                            data-price="4999" data-image="img/chocotorta.jpeg" data-stars="5">
+                            <div class="product-img-container line">
+                                <img src="img/chocotorta.jpeg" alt="" class="product-img" />
+                            </div>
+
+                            <div class="product-content column">
+                                <h2 class="product-name">Mini Chocotortas</h2>
+                                <p class="product-price">$ 600</p>
+                                <div class="review filters-review">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="button button-simple-solid btn-add-car" id="11">
+                                        Comprar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-description hidden">
+                                <p> Mini chocotortas </p>
+                            </div>
+                        </article>
+                        <!--  fin listado Productos  -->
+                </section>
+
+        </main>
+
+        <!--------------------------------  FIN CATALOGO------------------------------------------- -->
 
 
 
-    <!---------------- FOOTER  -------------------->
+        <!---------------- FOOTER  -------------------->
 
-    <footer class="footer-main line">
+        <footer class="footer-main line">
 
-        <div class="logo-container line">
-            <img src="img/iso_blanco.svg" class="logo-ada" />
-            <p class="brand">ADA SHOP -💚 Gracias por visitarnos 💚</p>
-    
-    <!----------------FIN FOOTER----------------->
+            <div class="logo-container line">
+                <img src="img/iso_blanco.svg" class="logo-ada" />
+                <p class="brand">ADA SHOP -💚 Gracias por visitarnos 💚</p>
 
- 
+                <!----------------FIN FOOTER----------------->
 
-     <script src="index.js"></script>
+
+
+                <script src="index.js"></script>
 </body>
 
 </html>

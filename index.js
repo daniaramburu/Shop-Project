@@ -46,6 +46,56 @@ const allCheckboxes = document.querySelectorAll(
 // const quantityOfProducts = document.querySelector("#products-quantity")
 // console.log(quantityOfProducts)
 
+//*CARRITO*/
+const closeCar = document.querySelector(".close-car-shop-menu")
+const openCar = document.querySelector(".btn-shop")
+const overlay = document.querySelector("#overlay")
+const carShopMenu = document.querySelector("#car-shop-menu")
+const hidden = document.querySelector(".hidden")
+const empyCar = document.querySelector(".empy-car-btn")
+const overlay2 = document.querySelector("#overlay2")
+const cancelEmptyCar = document.querySelector(".btn-cancel-empty")
+const confirmEmptyCar = document.querySelector(".btn-confirm-empty")
+const singEmpyCar = document.querySelector("#sing-empty-car-container")
+
+console.log(closeCar)
+console.log(openCar)
+console.log(overlay)
+console.log(carShopMenu)
+console.log(hidden)
+
+openCar.onclick = () => {
+  carShopMenu.classList.remove("hidden")
+  overlay.classList.remove("hidden")
+}
+
+closeCar.onclick = () => {
+  carShopMenu.classList.add("hidden")
+  overlay.classList.add("hidden")
+}
+
+
+
+//ABRIR Y CERRAR VACIAR EL CARRITO
+
+emptyCar.onclick = () => {
+  singEmpyCar.classList.remove("hidden")
+  overlay2.classList.remove("hidden")
+}
+
+cancelEmptyCar.onclick = () => {
+  singEmpyCar.classList.add("hidden")
+  overlay2.classList.add("hidden")
+
+}
+
+confirmEmptyCar.onclick = () => {
+  singEmpyCar.classList.add("hidden")
+  overlay2.classList.add("hidden")
+  overlay.classList.add("hidden")
+  carShopMenu.classList.add("hidden")
+}
+
 /*---------------F(X) GRILLA/LISTA---------------------*/ 
 
 /* f(x) para mostrar en grid: **/
