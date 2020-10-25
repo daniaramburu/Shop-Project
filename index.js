@@ -1,7 +1,7 @@
 
-/*-------SELECTORES----*/
+/*-------SELECTORES--------------------*/
 
-/*GRID- LIST */
+/*GRID-LIST*/
 
 const gridButton = document.querySelector('#grid-btn')
 const listButton = document.querySelector('#list-btn')
@@ -54,6 +54,7 @@ const carShopMenu = document.querySelector("#car-shop-menu")
 const hidden = document.querySelector(".hidden")
 const empyCar = document.querySelector(".empy-car-btn")
 const overlay2 = document.querySelector("#overlay2")
+
 const cancelEmptyCar = document.querySelector(".btn-cancel-empty")
 const confirmEmptyCar = document.querySelector(".btn-confirm-empty")
 const singEmpyCar = document.querySelector("#sing-empty-car-container")
@@ -64,6 +65,28 @@ console.log(overlay)
 console.log(carShopMenu)
 console.log(hidden)
 
+//*CHECKOUT*//
+const btnCheckout = document.querySelector(".buy-car-btn")
+const checkout = document.querySelector("#checkout-modal")
+const cancelCheckout = document.querySelector(".cancel-modal-btn")
+const paymentOptions = document.querySelectorAll(".payment-type")
+const cash = document.querySelector("#cash")
+const credit = document.querySelector("#credit")
+const shippingCheckbox = document.querySelector("#shipping-checkbox")
+const discoutCheckbox = document.querySelector("#discount-checkbox")
+const subtotal = document.querySelector("#subtotal")
+const surcharge = document.querySelector("#surcharge")
+const discount = document.querySelector("#discount")
+const shipping = document.querySelector("#shipping")
+const total = document.querySelector("#total")
+// console.log(btnCheckout)
+
+/*------------------------FUNCIONES-------------------------*/
+
+
+/*-----F(X) ABRIR CERRAR-----------*/
+
+/*--Carrito*/
 openCar.onclick = () => {
   carShopMenu.classList.remove("hidden")
   overlay.classList.remove("hidden")
@@ -74,11 +97,88 @@ closeCar.onclick = () => {
   overlay.classList.add("hidden")
 }
 
+/*--Checkout*/
+btnCheckout.onclick = () => {
+  checkout.classList.remove("hidden")
+  overlay2.classList.remove("hidden")
+}
 
+cancelCheckout.onclick = () => {
+  checkout.classList.add("hidden")
+  overlay2.classList.add("hidden")
+}
 
+//*----F(X) CALCULO TOTAL CHECKOUT----*/
+
+//precio subtotal
+let subtotalPrice = Number(subtotal.dataset.precio)
+
+//función calculo total cada vez que alguna opción está marcada
+for (let opcion of paymentOptions) {
+    opcion.oninput = () => {
+        totalPrice()
+    }
+}
+
+//recargo tarjeta
+let surchargePrice
+
+const surchargeCredit = () => {
+    surchargePrice = subtotalPrice * 0.1
+    surcharge.textContent = surchargePrice
+    return surchargePrice
+}
+
+//envio
+let shippingPrice
+
+const surchargeShip = () => {
+    shippingPrice = 50
+    shipping.textContent = shippingPrice
+    return shippingPrice
+}
+
+//agregoDescuento, donde se hace la cuenta individual
+let discountPrice
+
+const addDiscount = () => {
+    discountPrice = -subtotalPrice * 0.1
+    discount.textContent = discountPrice
+    return discountPrice
+}
+
+//total
+const totalPrice = () => {
+    if (credit.checked) {
+        surchargePrice = surchargeCredit()
+    } else {
+        surchargePrice = 0
+        surcharge.textContent = surchargePrice
+    }
+
+    if (shippingCheckbox.checked) {
+        surchargePrice = surchargeShip()
+
+    } else {
+        surchargePrice = 0
+        shipping.textContent = shippingPrice
+
+    }
+
+    if (discoutCheckbox.checked) {
+        discountPrice = addDiscount()
+    } else {
+        discountPrice = 0
+        discount.textContent = discountPrice
+    }
+
+    let totalPrice = subtotalPrice + shippingPrice + surchargePrice + discountPrice
+    total.textContent = totalPrice
+    return totalPrice
+}
 //ABRIR Y CERRAR VACIAR EL CARRITO
 
-emptyCar.onclick = () => {
+empyCar.onclick = () => {
   singEmpyCar.classList.remove("hidden")
   overlay2.classList.remove("hidden")
 }
@@ -381,8 +481,8 @@ clearAllFiltersBtn.onclick = () => {
 
 //-------------------Modificar Cantidad productos seleccionados-----------//
 
-const changeNumberProducts= () => {
-  const hiddenProducts = document.querySelectorAll("product.hidden")
-  let quantity = 12 - hiddenProducts.length
-  quantityOfProducts.textContent = "Mostrando" + " " + quantity + " " + "de 12 productos"
-}
+// const changeNumberProducts= () => {
+//   const hiddenProducts = document.querySelectorAll("product.hidden")
+//   let quantity = 12 - hiddenProducts.length
+//   quantityOfProducts.textContent = "Mostrando" + " " + quantity + " " + "de 12 productos"
+// }

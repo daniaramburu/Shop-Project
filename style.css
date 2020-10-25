@@ -50,7 +50,47 @@ p {
   font-size: 1.2vw;
 }
 
-/*carrito*/
+/*ANIMACIONES*/
+
+.product:hover {
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.product-img-container:hover img {
+  transform: scale(1.5);
+  opacity: 0.7;
+}
+
+.banner::before {
+  content: "";
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(70, 70, 70, 0.5);
+}
+
+/*Formas*/
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+/***********************CARRITO*************************/
 #overlay {
   position: fixed;
   z-index: 2;
@@ -92,7 +132,6 @@ p {
   font-size: 25px;
 }
 .car-container {
-  overflow: scroll;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -203,50 +242,127 @@ p {
   color: #ffffff;
   height: 50px;
   width: 390px;
+ 
+  border-radius: 5px;
+  
+}
+/****************CHECKOUT**********************/
+
+.modal {
+  z-index: 5;
+  position: absolute;
+  left: 25%;
+  padding: 30px 30px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  height: 100vh;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.checkout-info-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.personal-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-info {
+  margin-top: 20px;
+}
+
+.personal-input {
+  display: block;
+  border: 0;
+  border-bottom: 1px solid slategray;
+  margin-top: 10px;
+}
+
+.payment-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.formulario-contador {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-totals-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  justify-content: space-between;
+}
+.payment-details {
+  display: flex;
+  flex-direction: column;
+}
+
+#recargo {
+  color: red;
+}
+
+#descuento {
+  color: #73a942;
+}
+
+#total {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.btn-checkout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+.cancel-modal-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  margin: 5px;
+  background-color: transparent;
+  height: 50px;
+  width: 390px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border-color: black;
+  color: black;
+}
+
+.finish-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  margin: 5px;
+  background-color: #73a942;
+  color: #ffffff;
+  height: 50px;
+  width: 390px;
   border-radius: 5px;
   border: none;
 }
 
-/*ANIMACIONES*/
 
-.product:hover {
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-.product-img-container:hover img {
-  transform: scale(1.5);
-  opacity: 0.7;
-}
 
-.banner::before {
-  content: "";
-  display: flex;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(70, 70, 70, 0.5);
-}
-
-/*Formas*/
-
-.line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
 
 /*****Botones******/
 
@@ -270,7 +386,6 @@ p {
   border: none;
   box-shadow: none;
 }
-
 
 .button-transparent {
   background-color: transparent;

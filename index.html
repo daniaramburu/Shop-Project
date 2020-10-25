@@ -103,6 +103,76 @@
         </div>
     </div>
 
+       <!--CHECKOUT-->
+
+       <div id="checkout-modal" class="hidden">
+        <div class="modal">
+            <h2>Checkout</h2>
+            <div class="checkout-container">
+
+                <div class="checkout-info-container">
+
+                    <div class="personal-data">
+                        <h3>Datos Personales</h3>
+                        <div class="personal-info">
+                            <form>
+                                <label>Nombre y apellido
+                                    <input type="text" required tabindex="0" placeholder="ej: Santiago Nuñez"
+                                        class="personal-input"></label>
+
+                        </div>
+                        <div class="personal-input">
+                            <label>Gmail
+                                <form>
+                                    <input type="email" required tabindex="0" placeholder="ej: santi@snautor.com"
+                                        class="personal-input"></label>
+
+                        </div>
+
+                    </div>
+                    <div class="payment-container">
+                        <h3>Opciones de pago</h3>
+
+                        <label><input type="radio" id="cash" class="payment-type" required="true"
+                                aria-required="true" aria-label="Opcion de pago con débito o efectivo"
+                                aria-live="assertive" name="opciones-de-pago">Efectivo/Débito</label>
+                        <label><input type="radio" id="credit" class="payment-type"
+                                aria-label="Opción de pago con tarjeta de crédito" aria-live="assertive" required="true"
+                                aria-required="true" name="opciones-de-pago">Tarjeta
+                            de crédito</label>
+                        <label><input type="checkbox" id="shipping-checkbox" class="payment-type" name="opciones-de-pago"
+                                aria-label="Opción de envío" aria-live="assertive">Necesito envío</label>
+                        <label><input type="checkbox" id="discount-checkbox" class="payment-type"
+                                aria-label="Seleccione esta opcion si tiene tarjeta de descuento" aria-live="assertive"
+                                name="opciones-de-pago">Tengo tarjeta de descuento</label>
+
+                    </div>
+                </div>
+                <div class="payment-totals-container">
+                    <div class="totals">
+                        <h3>Resumen</h3>
+                    </div>
+                    <div class="payment-datails">
+                        <h4 aria-label="Recargo agregado" aria-live="assertive">Recargo: <span id="surcharge">0</span>
+                        </h4>
+                        <h4 aria-label="Descuento agregado al precio" aria-live="assertive">Descuento: <span
+                                id="discount">0</span></h4>
+                        <h4 aria-label="Costo de envío" aria-live="assertive">Envio: <span id="shipping">0</span></h4>
+                        <h4 aria-label="Precio de cada producto" aria-live="assertive">Subtotal<span id="subtotal"
+                                data-precio="1500"> $1500</span></h4>
+                        <p id="total" aria-label="Precio total que se debe pagar"> $1500</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="btn-checkout-container">
+                <button class="cancel-modal-btn" aria-label="Devolverse al carrito y seguir comprando">Seguir
+                    comprando</button>
+                <input type="submit" aria-label="finalizar la compra" class="finish-btn"></input>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
