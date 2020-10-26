@@ -181,8 +181,6 @@
 
     <header class="header line" id="header">
 
-
-
         <div class="header-marca">
             <img class="logo-ada" src="img/iso_blanco.svg" />
             <p class="brand">ADA SHOP</p>
@@ -190,10 +188,15 @@
 
 
         <div>
-            <button type="button" class="btn-shop line button button-transparent">
-                <i class="fas fa-shopping-cart cart-icon"></i>
-                Carrito (2 ítems)
-            </button>
+            <button type="button"class="btn-shop line button button-transparent"
+                    aria-label="Mostrar productos agregados al carrito">
+                <i class="fas fa-shopping-cart cart-icon"
+                   aria-hidden="true"
+                   aria-live="polite"></i>
+                <div class= "car-text">
+                    <p> Carrito (<span class="cart-qty">0</span> ítems)</p>
+                </div>
+                
         </div>
 
     </header>
@@ -201,12 +204,12 @@
     <!------------------------ FIN HEADER PRINCIPAL--------------------->
     <! <!--------------------------- BANNER --------------------------------->
 
-        <section class="banner-principal">
+        <section class="banner-principal column">
             <div>
-                <img class="banner-img" src="img/ice_cream_cake_banner.jpg" />
+                <img class="banner-img" src="img/banner1.jpg" alt="torta con cobertura de frutillas" aria-hidden="true" />
             </div>
-            <div>
-                <h1 class="banner-title">TIENDA DE PASTELERÍA</h1>
+            <div class="banner-title">
+                <h1>TIENDA DE PASTELERÍA</h1>
             </div>
         </section>
 
