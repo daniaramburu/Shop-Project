@@ -124,8 +124,11 @@ for (let opcion of paymentOptions) {
 let surchargePrice
 
 const surchargeCredit = () => {
+  console.log(surchargePrice, subtotalPrice)
     surchargePrice = subtotalPrice * 0.1
+    console.log(surchargePrice, subtotalPrice)
     surcharge.textContent = surchargePrice
+    console.log(surcharge.textContent)
     return surchargePrice
 }
 
@@ -150,6 +153,7 @@ const addDiscount = () => {
 //total
 const totalPrice = () => {
     if (credit.checked) {
+      console.log(surchargePrice)
         surchargePrice = surchargeCredit()
     } else {
         surchargePrice = 0
@@ -173,6 +177,8 @@ const totalPrice = () => {
     }
 
     let totalPrice = subtotalPrice + shippingPrice + surchargePrice + discountPrice
+    console.log(subtotalPrice,shippingPrice,  surchargePrice, discountPrice)
+    console.log('subtotalPrice','shippingPrice',  'surchargePrice', 'discountPrice')
     total.textContent = totalPrice
     return totalPrice
 }
